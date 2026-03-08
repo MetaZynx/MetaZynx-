@@ -116,7 +116,7 @@ export default function ServicesPage() {
       <section className="py-24 max-w-7xl mx-auto px-6 md:px-12 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl border border-border-warm shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <div key={index} className="bg-white p-8 rounded-2xl border border-border-warm shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 flex flex-col h-full group">
               <div className="mb-6 bg-secondary-bg w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-accent-orange/10 transition-colors duration-300">
                 {service.icon}
               </div>
@@ -138,7 +138,7 @@ export default function ServicesPage() {
               
               <Link 
                 href={service.link}
-                className="w-full h-[48px] border-2 border-brand-navy text-brand-navy font-sans font-bold text-[14px] uppercase tracking-[1.5px] rounded-md flex items-center justify-center gap-2 hover:bg-brand-navy hover:text-white transition-all mt-auto"
+                className="w-full h-[48px] border-2 border-brand-navy text-brand-navy font-sans font-bold text-[14px] uppercase tracking-[1.5px] rounded-md flex items-center justify-center gap-2 hover:bg-brand-navy hover:text-white hover:scale-[1.03] duration-200 ease-out transition-all mt-auto"
               >
                 Learn More <ArrowRight size={16} />
               </Link>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
             {industries.map((industry, index) => (
               <span 
                 key={index} 
-                className="px-6 py-3 bg-white border border-border-warm rounded-full font-sans font-bold text-[15px] text-brand-navy shadow-sm hover:border-accent-orange hover:text-accent-orange transition-colors cursor-default"
+                className="px-6 py-3 bg-white border border-border-warm rounded-full font-sans font-bold text-[15px] text-brand-navy shadow-sm hover:border-accent-orange hover:text-accent-orange hover:-translate-y-[2px] transition-all cursor-default"
               >
                 {industry}
               </span>
@@ -172,7 +172,7 @@ export default function ServicesPage() {
           </h2>
           <Link 
             href="/contact"
-            className="inline-flex items-center justify-center h-[60px] px-10 bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md hover:bg-opacity-90 transition-all shadow-lg shadow-accent-orange/20"
+            className="inline-flex items-center justify-center h-[60px] px-10 bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md hover:scale-[1.03] hover:shadow-lg hover:shadow-accent-orange/20 transition-all duration-200 ease-out"
           >
             Get a free consultation
           </Link>

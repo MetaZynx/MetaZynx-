@@ -147,7 +147,7 @@ export default function BlogContent() {
             
             {/* Featured Post (Only show if 'All' is selected and no search query) */}
             {activeCategory === 'All' && searchQuery === '' && (
-              <div className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm group">
+              <div className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm group hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300">
                 <div className="relative h-[400px] w-full bg-secondary-bg overflow-hidden">
                   <Image
                     src={`https://picsum.photos/seed/${featuredPost.imageSeed}/1200/800`}
@@ -195,7 +195,7 @@ export default function BlogContent() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.4 }}
-                    className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full"
+                    className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
                   >
                     <div className="relative h-[240px] w-full bg-secondary-bg overflow-hidden">
                       <Image

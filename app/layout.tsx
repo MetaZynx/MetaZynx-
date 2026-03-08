@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Syne, DM_Sans, Bebas_Neue } from 'next/font/google';
 import './globals.css';
+import PageTransition from '@/components/PageTransition';
 
 const syne = Syne({
   subsets: ['latin'],
@@ -36,7 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${syne.variable} ${dmSans.variable} ${bebasNeue.variable}`}>
       <body className="font-sans bg-primary-bg text-primary-text antialiased" suppressHydrationWarning>
-        {children}
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );

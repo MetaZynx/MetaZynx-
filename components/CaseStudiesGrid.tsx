@@ -119,7 +119,7 @@ export default function CaseStudiesGrid() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-xl transition-shadow group flex flex-col h-full"
+              className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
             >
               <div className="p-8 flex-grow flex flex-col">
                 <div className="flex items-center justify-between mb-6">

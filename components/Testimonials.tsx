@@ -43,7 +43,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card-bg p-10 rounded-xl border border-border-warm shadow-sm hover:shadow-md transition-shadow relative"
+              className="bg-card-bg p-10 rounded-xl border border-border-warm shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 relative"
             >
               <Quote size={48} className="text-accent-orange/20 absolute top-8 right-8" />
               <p className="font-sans text-[17px] leading-[1.75] text-secondary-text mb-8 italic relative z-10">

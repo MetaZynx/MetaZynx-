@@ -44,7 +44,7 @@ export default function CaseStudiesPage() {
           </h2>
           <Link 
             href="/contact"
-            className="inline-flex items-center justify-center h-[60px] px-10 bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md hover:bg-opacity-90 transition-all shadow-lg shadow-accent-orange/20"
+            className="inline-flex items-center justify-center h-[60px] px-10 bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md hover:scale-[1.03] hover:shadow-lg hover:shadow-accent-orange/20 transition-all duration-200 ease-out"
           >
             Start Your Growth Journey
           </Link>

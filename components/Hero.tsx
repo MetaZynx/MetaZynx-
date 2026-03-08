@@ -51,13 +51,13 @@ export default function Hero() {
           >
             <Link 
               href="/contact"
-              className="h-[52px] px-8 bg-accent-orange text-white font-sans font-medium text-[15px] uppercase tracking-[1.5px] rounded-md flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all shadow-lg shadow-accent-orange/20"
+              className="h-[52px] px-8 bg-accent-orange text-white font-sans font-medium text-[15px] uppercase tracking-[1.5px] rounded-md flex items-center justify-center gap-2 hover:scale-[1.03] duration-200 ease-out transition-all shadow-lg shadow-accent-orange/20"
             >
               Start Your Growth Journey <ArrowRight size={18} />
             </Link>
             <Link 
               href="/case-studies"
-              className="h-[52px] px-8 border-2 border-brand-navy text-brand-navy font-sans font-medium text-[15px] uppercase tracking-[1.5px] rounded-md flex items-center justify-center hover:bg-brand-navy hover:text-white transition-all"
+              className="h-[52px] px-8 border-2 border-brand-navy text-brand-navy font-sans font-medium text-[15px] uppercase tracking-[1.5px] rounded-md flex items-center justify-center hover:bg-brand-navy hover:text-white hover:scale-[1.03] duration-200 ease-out transition-all"
             >
               View Our Work
             </Link>

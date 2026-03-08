@@ -52,7 +52,7 @@ export default function BlogPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-card-bg rounded-xl border border-border-warm overflow-hidden hover:shadow-[0_20px_40px_rgba(27,45,91,0.08)] transition-all duration-300 flex flex-col h-full"
+              className="group bg-card-bg rounded-xl border border-border-warm overflow-hidden hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 flex flex-col h-full"
             >
               <div className="p-8 flex-grow flex flex-col">
                 <span className={`inline-block px-3 py-1 rounded-full text-xs font-sans font-bold uppercase tracking-[1px] mb-6 self-start border ${post.color}`}>

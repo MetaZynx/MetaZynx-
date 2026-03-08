@@ -49,7 +49,7 @@ export default function FinalCTA() {
         >
           <Link 
             href="/contact"
-            className="h-[64px] px-10 bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md flex items-center justify-center gap-3 hover:bg-opacity-90 transition-all shadow-xl shadow-accent-orange/30 hover:-translate-y-1 mb-6 w-full sm:w-auto"
+            className="h-[64px] px-10 bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md flex items-center justify-center gap-3 hover:scale-[1.03] duration-200 ease-out transition-all shadow-xl shadow-accent-orange/30 w-full sm:w-auto"
           >
             Book Your Free Audit Today <ArrowRight size={20} />
           </Link>

@@ -91,7 +91,7 @@ export default function Services() {
         <div className="text-center">
           <Link 
             href="/contact"
-            className="inline-flex items-center justify-center h-[52px] px-8 bg-brand-navy text-white font-sans font-medium text-[15px] uppercase tracking-[1.5px] rounded-md hover:bg-opacity-90 transition-all"
+            className="inline-flex items-center justify-center h-[52px] px-8 bg-brand-navy text-white font-sans font-medium text-[15px] uppercase tracking-[1.5px] rounded-md hover:scale-[1.03] duration-200 ease-out transition-all"
           >
             Need a custom package? Let&apos;s talk.
           </Link>

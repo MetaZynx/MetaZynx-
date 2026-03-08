@@ -115,7 +115,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl border border-border-warm shadow-sm hover:shadow-md transition-shadow">
+              <div key={index} className="bg-white p-8 rounded-2xl border border-border-warm shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300">
                 <div className="mb-6 bg-primary-bg w-16 h-16 rounded-xl flex items-center justify-center">
                   {value.icon}
                 </div>
@@ -140,7 +140,7 @@ export default function AboutPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team.map((member, index) => (
-            <div key={index} className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm group">
+            <div key={index} className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm group hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300">
               {/* <!-- Replace with real team photos --> */}
               <div className="h-64 bg-secondary-bg relative">
                 <Image
@@ -152,7 +152,7 @@ export default function AboutPage() {
                 />
               </div>
               <div className="p-8 relative">
-                <a href="#" className="absolute -top-6 right-6 w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center hover:bg-accent-orange transition-colors shadow-lg">
+                <a href="#" className="absolute -top-6 right-6 w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center hover:bg-accent-orange transition-colors shadow-lg hover:scale-[1.03] duration-200 ease-out">
                   <Linkedin size={20} />
                 </a>
                 <h3 className="font-display font-bold text-[24px] text-brand-navy mb-1">{member.name}</h3>
@@ -172,7 +172,7 @@ export default function AboutPage() {
           <h2 className="font-display font-bold text-[32px] mb-12">Awards & Recognition</h2>
           <div className="flex flex-wrap justify-center gap-8">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="w-40 h-40 rounded-full border border-white/20 flex flex-col items-center justify-center bg-white/5 backdrop-blur-sm">
+              <div key={i} className="w-40 h-40 rounded-full border border-white/20 flex flex-col items-center justify-center bg-white/5 backdrop-blur-sm hover:-translate-y-[6px] hover:shadow-xl hover:shadow-white/10 transition-all duration-300">
                 <Award size={40} className="text-accent-gold mb-2" />
                 <span className="font-sans font-bold text-[13px] uppercase tracking-[1px] text-center px-4">Award Title {i}</span>
               </div>
@@ -189,7 +189,7 @@ export default function AboutPage() {
           </h2>
           <Link 
             href="/contact"
-            className="inline-flex items-center justify-center h-[60px] px-10 bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md hover:bg-opacity-90 transition-all shadow-lg shadow-accent-orange/20"
+            className="inline-flex items-center justify-center h-[60px] px-10 bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md hover:scale-[1.03] hover:shadow-lg hover:shadow-accent-orange/20 transition-all duration-200 ease-out"
           >
             Book a call
           </Link>

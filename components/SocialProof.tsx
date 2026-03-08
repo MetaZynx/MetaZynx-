@@ -1,3 +1,5 @@
+import VanillaCounter from './VanillaCounter';
+
 export default function SocialProof() {
   return (
     <section className="bg-secondary-bg py-16 border-b border-border-warm">
@@ -17,15 +19,21 @@ export default function SocialProof() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto border-t border-border-warm pt-12">
           <div className="text-center md:border-r border-border-warm">
-            <p className="font-stats text-5xl text-brand-navy mb-2">₹50Cr+</p>
+            <p className="font-stats text-5xl text-brand-navy mb-2">
+              <VanillaCounter prefix="₹" end={50} suffix="Cr+" />
+            </p>
             <p className="font-sans text-sm text-secondary-text uppercase tracking-wider font-medium">Ad Spend Managed</p>
           </div>
           <div className="text-center md:border-r border-border-warm">
-            <p className="font-stats text-5xl text-brand-navy mb-2">200+</p>
+            <p className="font-stats text-5xl text-brand-navy mb-2">
+              <VanillaCounter end={200} suffix="+" />
+            </p>
             <p className="font-sans text-sm text-secondary-text uppercase tracking-wider font-medium">Campaigns Delivered</p>
           </div>
           <div className="text-center">
-            <p className="font-stats text-5xl text-brand-navy mb-2">8.4x</p>
+            <p className="font-stats text-5xl text-brand-navy mb-2">
+              <VanillaCounter end={8.4} decimals={1} suffix="x" />
+            </p>
             <p className="font-sans text-sm text-secondary-text uppercase tracking-wider font-medium">Average ROAS</p>
           </div>
         </div>
