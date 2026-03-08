@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-bg: #FAFAF8;
+  --color-secondary-bg: #F2EFE9;
+  --color-primary-text: #0D0D0D;
+  --color-secondary-text: #4A4A4A;
+  --color-muted-text: #888888;
+  --color-brand-navy: #1B2D5B;
+  --color-accent-orange: #E8440A;
+  --color-accent-gold: #F5A623;
+  --color-card-bg: #FFFFFF;
+  --color-border-warm: #E0DDD6;
+
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-stats: var(--font-bebas-neue), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
