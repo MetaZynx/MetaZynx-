@@ -20,6 +20,23 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
@@ -37,9 +54,9 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" aria-label="MetaZynx Home">
+        <a href="/" aria-label="MetaZynx Home" onClick={() => setIsMobileMenuOpen(false)}>
           <Image
-            src="https://raw.githubusercontent.com/MetaZynx/MetaZynx-/refs/heads/main/MetaZynx-%20Logo.png"
+            src="https://i.ibb.co/5WnwLTjc/Meta-Zynx-Logo.png"
             alt="MetaZynx Logo"
             width={160}
             height={48}
