@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Syne, DM_Sans, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import PageTransition from '@/components/PageTransition';
-import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import CookieConsent from '@/components/CookieConsent';
 
 const syne = Syne({
@@ -88,8 +88,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PageTransition>
           {children}
         </PageTransition>
-        <FloatingWhatsApp />
         <CookieConsent />
+        <WhatsAppButton />
       </body>
     </html>
   );
