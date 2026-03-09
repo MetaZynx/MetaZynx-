@@ -17,7 +17,7 @@ export default function AboutPage() {
   const timeline = [
     { year: '2020', event: 'Founded' },
     { year: '2021', event: 'First Campaign' },
-    { year: '2022', event: 'First ₹1Cr Month' },
+    { year: '2022', event: 'First $100K Month' },
     { year: 'Today', event: '360° Agency' },
   ];
 

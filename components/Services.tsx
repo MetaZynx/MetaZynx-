@@ -10,37 +10,43 @@ export default function Services() {
       title: 'SEO & Content',
       description: 'Dominate search rankings with data-driven SEO strategies and high-converting content that drives organic growth.',
       icon: <Search size={32} className="text-accent-orange" />,
-      link: '/services/seo'
+      link: '/services/seo',
+      tooltip: 'Boost Organic Traffic'
     },
     {
       title: 'Meta & Google Ads',
       description: 'Precision-targeted paid campaigns engineered for maximum ROAS and scalable customer acquisition.',
       icon: <Megaphone size={32} className="text-accent-orange" />,
-      link: '/services/ads'
+      link: '/services/ads',
+      tooltip: 'Maximize ROAS'
     },
     {
       title: 'Graphic Design',
       description: 'Premium visual identities, ad creatives, and brand assets that capture attention and drive action.',
       icon: <PenTool size={32} className="text-accent-orange" />,
-      link: '/services/design'
+      link: '/services/design',
+      tooltip: 'Elevate Brand Identity'
     },
     {
       title: 'Web Development',
       description: 'High-performance, conversion-optimized websites built on modern tech stacks for serious brands.',
       icon: <Code size={32} className="text-accent-orange" />,
-      link: '/services/development'
+      link: '/services/development',
+      tooltip: 'Build High-Converting Sites'
     },
     {
       title: 'Influencer & UGC',
       description: 'Authentic creator partnerships and user-generated content that builds trust and social proof at scale.',
       icon: <Users size={32} className="text-accent-orange" />,
-      link: '/services/influencer'
+      link: '/services/influencer',
+      tooltip: 'Leverage Social Proof'
     },
     {
       title: 'ORM',
       description: 'Proactive online reputation management to protect and enhance your brand\'s digital footprint.',
       icon: <ShieldCheck size={32} className="text-accent-orange" />,
-      link: '/services/orm'
+      link: '/services/orm',
+      tooltip: 'Protect Brand Image'
     }
   ];
 
@@ -66,8 +72,20 @@ export default function Services() {
             >
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-accent-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
-              <div className="mb-6 bg-secondary-bg w-16 h-16 rounded-lg flex items-center justify-center group-hover:bg-accent-orange/10 transition-colors duration-300">
-                {service.icon}
+              <div className="relative inline-block mb-6 group/icon">
+                <Link href={service.link}>
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="bg-secondary-bg w-16 h-16 rounded-lg flex items-center justify-center group-hover:bg-accent-orange/10 transition-colors duration-300 cursor-pointer"
+                  >
+                    {service.icon}
+                  </motion.div>
+                </Link>
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-brand-navy text-white text-xs font-sans px-3 py-1.5 rounded opacity-0 invisible group-hover/icon:opacity-100 group-hover/icon:visible transition-all duration-300 whitespace-nowrap z-10 pointer-events-none shadow-md">
+                  {service.tooltip}
+                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-navy rotate-45"></div>
+                </div>
               </div>
               
               <h3 className="font-display font-bold text-[22px] md:text-[28px] text-brand-navy mb-4">

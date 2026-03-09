@@ -151,10 +151,10 @@ export default function ContactForm() {
           className={`w-full px-4 py-3 rounded-md border ${errors.budget ? 'border-red-500' : 'border-border-warm'} focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors bg-white font-sans text-[15px]`}
         >
           <option value="">Select a range...</option>
-          <option value="under-50k">Under ₹50K</option>
-          <option value="50k-2l">₹50K – ₹2L</option>
-          <option value="2l-10l">₹2L – ₹10L</option>
-          <option value="10l-plus">₹10L+</option>
+          <option value="under-50k">Under $5K</option>
+          <option value="50k-2l">$5K – $25K</option>
+          <option value="2l-10l">$25K – $120K</option>
+          <option value="10l-plus">$120K+</option>
         </select>
         {errors.budget && <p className="text-red-500 text-xs mt-1">{errors.budget}</p>}
       </div>

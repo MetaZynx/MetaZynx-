@@ -107,14 +107,14 @@ export default function Hero() {
                 </div>
                 <div>
                   <p className="font-sans text-xs text-secondary-text mb-1 uppercase tracking-wider font-medium">Cost Per Lead</p>
-                  <p className="font-sans font-bold text-2xl text-brand-navy">₹47</p>
+                  <p className="font-sans font-bold text-2xl text-brand-navy">$0.58</p>
                 </div>
               </div>
 
               <div className="pt-6 border-t border-border-warm">
                 <div className="flex justify-between items-center mb-2">
                   <p className="font-sans text-xs text-secondary-text uppercase tracking-wider font-medium">Ad Spend Managed</p>
-                  <p className="font-sans font-bold text-sm text-brand-navy">₹2.4Cr/month</p>
+                  <p className="font-sans font-bold text-sm text-brand-navy">$285K/month</p>
                 </div>
                 <div className="w-full h-2 bg-secondary-bg rounded-full overflow-hidden">
                   <div className="w-[85%] h-full bg-gradient-to-r from-brand-navy to-accent-orange rounded-full"></div>
