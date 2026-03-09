@@ -39,7 +39,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="/" aria-label="MetaZynx Home">
           <Image
-            src="/metazynx-logo.png"
+            src="https://raw.githubusercontent.com/MetaZynx/MetaZynx-/refs/heads/main/MetaZynx-%20Logo.png"
             alt="MetaZynx Logo"
             width={160}
             height={48}
