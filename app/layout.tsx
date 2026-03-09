@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "addressLocality": "Chandigarh"
     },
     "sameAs": [
-      "https://www.linkedin.com/company/metazynx",
+      "https://in.linkedin.com/company/metazynx",
       "https://www.instagram.com/metazynx"
     ]
   };

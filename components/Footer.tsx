@@ -19,7 +19,7 @@ export default function Footer() {
             Performance Without Limits. 360° Digital Marketing. Measurable Results. Zero Compromise.
           </p>
           <div className="flex items-center gap-4">
-            <a href="https://www.linkedin.com/company/metazynx" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="LinkedIn">
+            <a href="https://in.linkedin.com/company/metazynx" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="LinkedIn">
               <Linkedin size={20} />
             </a>
             <a href="https://www.instagram.com/metazynx" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="Instagram">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -36,14 +37,20 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 z-50">
-          <div className="w-8 h-8 bg-accent-orange flex items-center justify-center transform -skew-x-12">
-            <span className="text-white font-display font-bold text-xl">Z</span>
-          </div>
-          <span className="font-display font-extrabold text-2xl text-brand-navy tracking-tight">
-            MetaZynx
-          </span>
-        </Link>
+        <a href="/" aria-label="MetaZynx Home">
+          <Image
+            src="/metazynx-logo.png"
+            alt="MetaZynx Logo"
+            width={160}
+            height={48}
+            priority
+            style={{
+              objectFit: "contain",
+              height: "40px",
+              width: "auto",
+            }}
+          />
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
