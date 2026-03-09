@@ -15,7 +15,8 @@ const featuredPost = {
   author: 'Rahul Sharma',
   date: 'March 8, 2026',
   readTime: '8 min read',
-  imageSeed: 'strategy'
+  imageSeed: 'strategy',
+  slug: 'omnichannel-performance-marketing-2026'
 };
 
 const posts = [
@@ -27,7 +28,8 @@ const posts = [
     author: 'Priya Desai',
     date: 'March 5, 2026',
     readTime: '6 min read',
-    imageSeed: 'seo'
+    imageSeed: 'seo',
+    slug: 'future-of-search-ai-overviews'
   },
   {
     id: 2,
@@ -37,7 +39,8 @@ const posts = [
     author: 'Rahul Sharma',
     date: 'March 2, 2026',
     readTime: '5 min read',
-    imageSeed: 'ads'
+    imageSeed: 'ads',
+    slug: 'why-meta-ads-fail'
   },
   {
     id: 3,
@@ -47,7 +50,8 @@ const posts = [
     author: 'Anand Verma',
     date: 'Feb 28, 2026',
     readTime: '7 min read',
-    imageSeed: 'social'
+    imageSeed: 'social',
+    slug: 'authentic-creator-partnerships'
   },
   {
     id: 4,
@@ -57,7 +61,8 @@ const posts = [
     author: 'Priya Desai',
     date: 'Feb 24, 2026',
     readTime: '4 min read',
-    imageSeed: 'web'
+    imageSeed: 'web',
+    slug: 'core-web-vitals-ecommerce'
   },
   {
     id: 5,
@@ -67,7 +72,8 @@ const posts = [
     author: 'Rahul Sharma',
     date: 'Feb 20, 2026',
     readTime: '5 min read',
-    imageSeed: 'reputation'
+    imageSeed: 'reputation',
+    slug: 'protecting-brand-viral-outrage'
   },
   {
     id: 6,
@@ -77,14 +83,15 @@ const posts = [
     author: 'Anand Verma',
     date: 'Feb 15, 2026',
     readTime: '6 min read',
-    imageSeed: 'design'
+    imageSeed: 'design',
+    slug: 'psychology-of-ad-creatives'
   }
 ];
 
 const popularPosts = [
-  { title: '10 Technical SEO Mistakes Costing You Traffic', date: 'Jan 12, 2026' },
-  { title: 'The Ultimate Guide to Google Ads Bidding Strategies', date: 'Jan 05, 2026' },
-  { title: 'How to Build a High-Converting Landing Page', date: 'Dec 28, 2025' }
+  { title: '10 Technical SEO Mistakes Costing You Traffic', date: 'Jan 12, 2026', slug: 'technical-seo-mistakes' },
+  { title: 'The Ultimate Guide to Google Ads Bidding Strategies', date: 'Jan 05, 2026', slug: 'google-ads-bidding' },
+  { title: 'How to Build a High-Converting Landing Page', date: 'Dec 28, 2025', slug: 'high-converting-landing-page' }
 ];
 
 export default function BlogContent() {
@@ -175,7 +182,7 @@ export default function BlogContent() {
                     {featuredPost.excerpt}
                   </p>
                   <Link 
-                    href="#"
+                    href={`/blog/${featuredPost.slug}`}
                     className="inline-flex items-center gap-2 font-sans font-bold text-[15px] text-brand-navy group-hover:text-accent-orange transition-colors uppercase tracking-[1px]"
                   >
                     Read Full Article <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -188,7 +195,7 @@ export default function BlogContent() {
             <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <AnimatePresence mode="popLayout">
                 {filteredPosts.map((post) => (
-                  <motion.div
+                  <motion.div 
                     key={post.id}
                     layout
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -197,32 +204,34 @@ export default function BlogContent() {
                     transition={{ duration: 0.4 }}
                     className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
                   >
-                    <div className="relative h-[240px] w-full bg-secondary-bg overflow-hidden">
-                      <Image
-                        src={`https://picsum.photos/seed/${post.imageSeed}/800/600`}
-                        alt={post.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1 bg-white text-brand-navy rounded-full text-[10px] font-sans font-bold uppercase tracking-[1px] shadow-sm">
-                          {post.category}
-                        </span>
+                    <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
+                      <div className="relative h-[240px] w-full bg-secondary-bg overflow-hidden">
+                        <Image
+                          src={`https://picsum.photos/seed/${post.imageSeed}/800/600`}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <span className="inline-block px-3 py-1 bg-white text-brand-navy rounded-full text-[10px] font-sans font-bold uppercase tracking-[1px] shadow-sm">
+                            {post.category}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="p-6 md:p-8 flex-grow flex flex-col">
-                      <h3 className="font-display font-bold text-[22px] leading-[1.3] tracking-[-0.5px] text-brand-navy mb-3 group-hover:text-accent-orange transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="font-sans text-[15px] leading-[1.6] text-secondary-text mb-6 line-clamp-2 flex-grow">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between text-[13px] font-sans text-muted-text pt-6 border-t border-border-warm mt-auto">
-                        <div className="flex items-center gap-1.5"><User size={14} /> {post.author}</div>
-                        <div className="flex items-center gap-1.5"><Clock size={14} /> {post.readTime}</div>
+                      <div className="p-6 md:p-8 flex-grow flex flex-col">
+                        <h3 className="font-display font-bold text-[22px] leading-[1.3] tracking-[-0.5px] text-brand-navy mb-3 group-hover:text-accent-orange transition-colors line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="font-sans text-[15px] leading-[1.6] text-secondary-text mb-6 line-clamp-2 flex-grow">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between text-[13px] font-sans text-muted-text pt-6 border-t border-border-warm mt-auto">
+                          <div className="flex items-center gap-1.5"><User size={14} /> {post.author}</div>
+                          <div className="flex items-center gap-1.5"><Clock size={14} /> {post.readTime}</div>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </motion.div>
                 ))}
               </AnimatePresence>
@@ -267,7 +276,7 @@ export default function BlogContent() {
               </h3>
               <div className="space-y-6">
                 {popularPosts.map((post, index) => (
-                  <Link href="#" key={index} className="group block">
+                  <Link href={`/blog/${post.slug}`} key={index} className="group block">
                     <p className="font-sans text-[12px] font-bold text-accent-orange uppercase tracking-[1px] mb-1">
                       {post.date}
                     </p>

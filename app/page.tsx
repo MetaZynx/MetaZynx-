@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import SocialProof from '@/components/SocialProof';
@@ -8,6 +9,14 @@ import Testimonials from '@/components/Testimonials';
 import BlogPreview from '@/components/BlogPreview';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'MetaZynx | 360° Performance Marketing Agency',
+  description: 'MetaZynx is a premier performance marketing agency delivering measurable growth through SEO, Paid Ads, Design, and Development.',
+  alternates: {
+    canonical: 'https://www.metazynx.com',
+  },
+};
 
 export default function Home() {
   return (

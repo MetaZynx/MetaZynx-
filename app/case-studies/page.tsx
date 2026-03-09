@@ -7,6 +7,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Case Studies | Proven Results — MetaZynx',
   description: "Real results from real campaigns. Explore MetaZynx's case studies across SEO, paid media, influencer marketing and more.",
+  alternates: {
+    canonical: 'https://www.metazynx.com/case-studies',
+  },
 };
 
 export default function CaseStudiesPage() {

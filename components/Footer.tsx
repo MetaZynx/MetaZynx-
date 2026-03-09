@@ -19,16 +19,16 @@ export default function Footer() {
             Performance Without Limits. 360° Digital Marketing. Measurable Results. Zero Compromise.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/metazynx" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="LinkedIn">
               <Linkedin size={20} />
             </a>
-            <a href="#" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/metazynx" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="Instagram">
               <Instagram size={20} />
             </a>
-            <a href="#" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="Twitter">
+            <a href="https://twitter.com/MetaZynx" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="Twitter">
               <Twitter size={20} />
             </a>
-            <a href="#" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="YouTube">
+            <a href="https://www.youtube.com/@MetaZynx" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-orange transition-colors" aria-label="YouTube">
               <Youtube size={20} />
             </a>
           </div>
@@ -39,7 +39,7 @@ export default function Footer() {
           <h4 className="font-display font-bold text-lg mb-6 text-white">Services</h4>
           <ul className="flex flex-col gap-4">
             <li><Link href="/services/seo" className="text-gray-300 hover:text-accent-orange transition-colors font-sans text-[15px]">SEO & Content</Link></li>
-            <li><Link href="/services/paid-ads" className="text-gray-300 hover:text-accent-orange transition-colors font-sans text-[15px]">Meta & Google Ads</Link></li>
+            <li><Link href="/services/ads" className="text-gray-300 hover:text-accent-orange transition-colors font-sans text-[15px]">Meta & Google Ads</Link></li>
             <li><Link href="/services/design" className="text-gray-300 hover:text-accent-orange transition-colors font-sans text-[15px]">Graphic Design</Link></li>
             <li><Link href="/services/development" className="text-gray-300 hover:text-accent-orange transition-colors font-sans text-[15px]">Web Development</Link></li>
             <li><Link href="/services/influencer" className="text-gray-300 hover:text-accent-orange transition-colors font-sans text-[15px]">Influencer & UGC</Link></li>
@@ -76,9 +76,6 @@ export default function Footer() {
               <span>Chandigarh, India</span>
             </li>
           </ul>
-          <a href="https://wa.me/916026767767" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-accent-orange font-sans font-medium hover:text-white transition-colors mb-6">
-            WhatsApp Quick Link →
-          </a>
           <div className="flex gap-3">
             <span className="bg-white/10 text-white text-xs font-sans px-3 py-1 rounded border border-white/20">GST Registered</span>
             <span className="bg-white/10 text-white text-xs font-sans px-3 py-1 rounded border border-white/20">MSME Certified</span>

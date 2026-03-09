@@ -1,23 +1,19 @@
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Phone, Mail, MapPin, MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
+
+import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact MetaZynx | Book Your Free Marketing Audit',
   description: 'Get in touch with MetaZynx. Book a free 360° marketing audit for your brand. No commitments, just insights.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/contact',
+  },
 };
 
 export default function ContactPage() {
-  const services = [
-    'SEO & Content',
-    'Meta & Google Ads',
-    'Graphic Design',
-    'Web Development',
-    'Influencer & UGC',
-    'ORM'
-  ];
-
   const faqs = [
     {
       question: 'How much do your services cost?',
@@ -73,63 +69,7 @@ export default function ContactPage() {
             <div className="bg-white p-8 md:p-10 rounded-2xl border border-border-warm shadow-sm">
               <h2 className="font-display font-bold text-[32px] text-brand-navy mb-8">Request Your Free Audit</h2>
               
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="fullName" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Full Name *</label>
-                  <input type="text" id="fullName" required className="w-full px-4 py-3 rounded-md border border-border-warm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors font-sans text-[15px]" placeholder="John Doe" />
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="businessName" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Business Name *</label>
-                    <input type="text" id="businessName" required className="w-full px-4 py-3 rounded-md border border-border-warm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors font-sans text-[15px]" placeholder="Acme Corp" />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Phone Number *</label>
-                    <input type="tel" id="phone" required className="w-full px-4 py-3 rounded-md border border-border-warm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors font-sans text-[15px]" placeholder="+91 98765 43210" />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Work Email *</label>
-                  <input type="email" id="email" required className="w-full px-4 py-3 rounded-md border border-border-warm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors font-sans text-[15px]" placeholder="john@company.com" />
-                </div>
-
-                <div>
-                  <label htmlFor="budget" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Monthly Marketing Budget *</label>
-                  <select id="budget" required className="w-full px-4 py-3 rounded-md border border-border-warm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors bg-white font-sans text-[15px]">
-                    <option value="">Select a range...</option>
-                    <option value="under-50k">Under ₹50K</option>
-                    <option value="50k-2l">₹50K – ₹2L</option>
-                    <option value="2l-10l">₹2L – ₹10L</option>
-                    <option value="10l-plus">₹10L+</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block font-sans text-[14px] font-bold text-brand-navy mb-3">Services Interested In</label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {services.map((service, index) => (
-                      <label key={index} className="flex items-center gap-3 cursor-pointer group">
-                        <div className="relative flex items-center justify-center">
-                          <input type="checkbox" className="peer appearance-none w-5 h-5 border border-border-warm rounded-sm checked:bg-accent-orange checked:border-accent-orange transition-colors cursor-pointer" />
-                          <CheckCircle2 size={14} className="absolute text-white opacity-0 peer-checked:opacity-100 pointer-events-none" />
-                        </div>
-                        <span className="font-sans text-[15px] text-secondary-text group-hover:text-brand-navy transition-colors">{service}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Message (Optional)</label>
-                  <textarea id="message" rows={4} className="w-full px-4 py-3 rounded-md border border-border-warm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors resize-none font-sans text-[15px]" placeholder="Tell us about your current challenges and goals..."></textarea>
-                </div>
-
-                <button type="submit" className="w-full h-[60px] bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md hover:scale-[1.03] hover:shadow-lg hover:shadow-accent-orange/20 transition-all duration-200 ease-out flex items-center justify-center gap-2">
-                  Request Free Audit <ArrowRight size={20} />
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
 
@@ -168,15 +108,6 @@ export default function ContactPage() {
                   </div>
                 </li>
               </ul>
-
-              <a 
-                href="https://wa.me/916026767767" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="mt-8 w-full h-[52px] bg-[#25D366] text-white font-sans font-bold text-[15px] uppercase tracking-[1.5px] rounded-md hover:scale-[1.03] hover:shadow-lg hover:shadow-[#25D366]/20 transition-all duration-200 ease-out flex items-center justify-center gap-2"
-              >
-                <MessageCircle size={20} /> Chat on WhatsApp
-              </a>
             </div>
 
             {/* What Happens Next */}

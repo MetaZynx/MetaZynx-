@@ -8,6 +8,9 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'About MetaZynx | 360° Performance Marketing Agency',
   description: "Learn about MetaZynx — our story, our team, our values, and why the world's most ambitious brands trust us with their digital marketing.",
+  alternates: {
+    canonical: 'https://www.metazynx.com/about',
+  },
 };
 
 export default function AboutPage() {

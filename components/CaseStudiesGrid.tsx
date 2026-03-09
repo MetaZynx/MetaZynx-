@@ -16,7 +16,8 @@ const caseStudies = [
     metrics: [
       { label: 'ROAS', value: '6.2x' },
       { label: 'CPA', value: '-42%' }
-    ]
+    ],
+    slug: 'ecommerce-6x-roas'
   },
   {
     id: 2,
@@ -28,7 +29,8 @@ const caseStudies = [
     metrics: [
       { label: 'Lead Volume', value: '+480%' },
       { label: 'CPL', value: '-35%' }
-    ]
+    ],
+    slug: 'real-estate-lead-generation'
   },
   {
     id: 3,
@@ -40,7 +42,8 @@ const caseStudies = [
     metrics: [
       { label: 'Traffic', value: '+215%' },
       { label: 'Top 3 Ranks', value: '45+' }
-    ]
+    ],
+    slug: 'saas-organic-traffic-growth'
   },
   {
     id: 4,
@@ -52,7 +55,8 @@ const caseStudies = [
     metrics: [
       { label: 'Rating', value: '4.8/5' },
       { label: 'Reviews', value: '1,200+' }
-    ]
+    ],
+    slug: 'healthcare-reputation-management'
   },
   {
     id: 5,
@@ -64,7 +68,8 @@ const caseStudies = [
     metrics: [
       { label: 'Load Time', value: '< 2s' },
       { label: 'Conv. Rate', value: '+40%' }
-    ]
+    ],
+    slug: 'd2c-retailer-conversion-lift'
   },
   {
     id: 6,
@@ -76,7 +81,8 @@ const caseStudies = [
     metrics: [
       { label: 'Views', value: '3M+' },
       { label: 'Engagement', value: '+310%' }
-    ]
+    ],
+    slug: 'luxury-resort-creator-marketing'
   }
 ];
 
@@ -149,7 +155,7 @@ export default function CaseStudiesGrid() {
                 </div>
                 
                 <Link 
-                  href="#"
+                  href={`/case-studies/${study.slug}`}
                   className="inline-flex items-center gap-2 font-sans font-medium text-[15px] text-brand-navy group-hover:text-accent-orange transition-colors uppercase tracking-[1px] mt-auto"
                 >
                   Read Case Study <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

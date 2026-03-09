@@ -16,7 +16,7 @@ export default function Services() {
       title: 'Meta & Google Ads',
       description: 'Precision-targeted paid campaigns engineered for maximum ROAS and scalable customer acquisition.',
       icon: <Megaphone size={32} className="text-accent-orange" />,
-      link: '/services/paid-ads'
+      link: '/services/ads'
     },
     {
       title: 'Graphic Design',

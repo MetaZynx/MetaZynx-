@@ -10,19 +10,22 @@ export default function BlogPreview() {
       category: 'SEO',
       title: 'The Future of Search: AI Overviews and Your Organic Strategy',
       excerpt: 'How to adapt your content strategy for the new era of AI-driven search results and maintain visibility.',
-      color: 'bg-blue-100 text-blue-700 border-blue-200'
+      color: 'bg-blue-100 text-blue-700 border-blue-200',
+      slug: 'future-of-search-ai-overviews'
     },
     {
       category: 'Performance Marketing',
       title: 'Why Your Meta Ads Are Failing (And How to Fix Them)',
       excerpt: 'A deep dive into common account structure mistakes and creative fatigue that kill ROAS.',
-      color: 'bg-orange-100 text-orange-700 border-orange-200'
+      color: 'bg-orange-100 text-orange-700 border-orange-200',
+      slug: 'why-meta-ads-fail'
     },
     {
       category: 'Social Media',
       title: 'UGC is Dead. Long Live Authentic Creator Partnerships.',
       excerpt: 'Why consumers see through fake UGC and how to build genuine creator relationships that convert.',
-      color: 'bg-purple-100 text-purple-700 border-purple-200'
+      color: 'bg-purple-100 text-purple-700 border-purple-200',
+      slug: 'authentic-creator-partnerships'
     }
   ];
 
@@ -65,7 +68,7 @@ export default function BlogPreview() {
                   {post.excerpt}
                 </p>
                 <Link 
-                  href="/blog"
+                  href={`/blog/${post.slug}`}
                   className="inline-flex items-center gap-2 font-sans font-medium text-[15px] text-brand-navy group-hover:text-accent-orange transition-colors uppercase tracking-[1px] mt-auto"
                 >
                   Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

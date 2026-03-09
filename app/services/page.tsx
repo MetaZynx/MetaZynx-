@@ -7,6 +7,9 @@ import { Search, Megaphone, PenTool, Code, Users, ShieldCheck, CheckCircle2, Arr
 export const metadata: Metadata = {
   title: 'Our Services | 360° Digital Marketing — MetaZynx',
   description: "Explore MetaZynx's full suite of digital marketing services: SEO, Meta Ads, Google Ads, Graphic Design, Web Development, Influencer Marketing, UGC, and ORM. All under one roof.",
+  alternates: {
+    canonical: 'https://www.metazynx.com/services',
+  },
 };
 
 export default function ServicesPage() {
