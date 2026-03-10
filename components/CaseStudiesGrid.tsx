@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -97,6 +97,18 @@ const categories = ['All', 'SEO', 'Paid Ads', 'Social', 'ORM', 'Development'];
 
 export default function CaseStudiesGrid() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleFilterChange = (category: string) => {
+    if (category === activeFilter) return;
+    setIsLoading(true);
+    setActiveFilter(category);
+    
+    // Simulate network/filtering delay
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 600);
+  };
 
   const filteredStudies = activeFilter === 'All' 
     ? caseStudies 
@@ -109,12 +121,13 @@ export default function CaseStudiesGrid() {
         {categories.map((category) => (
           <button
             key={category}
-            onClick={() => setActiveFilter(category)}
+            onClick={() => handleFilterChange(category)}
+            disabled={isLoading}
             className={`px-6 py-2.5 rounded-full font-sans font-bold text-[14px] uppercase tracking-[1px] transition-all duration-300 ${
               activeFilter === category
                 ? 'bg-brand-navy text-white shadow-md'
                 : 'bg-white text-secondary-text border border-border-warm hover:border-brand-navy hover:text-brand-navy'
-            }`}
+            } ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             {category}
           </button>
@@ -124,66 +137,104 @@ export default function CaseStudiesGrid() {
       {/* Grid */}
       <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence mode="popLayout">
-          {filteredStudies.map((study) => (
-            <motion.div
-              key={study.id}
-              layout
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
-            >
-              <div className="relative h-48 w-full overflow-hidden border-b border-border-warm">
-                <Image 
-                  src={study.image} 
-                  alt={study.title} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors duration-500" />
-              </div>
-              <div className="p-8 flex-grow flex flex-col">
-                <div className="flex items-center justify-between mb-6">
-                  <span className="inline-block px-3 py-1 bg-secondary-bg text-brand-navy rounded-full text-xs font-sans font-bold uppercase tracking-[1px]">
-                    {study.industry}
-                  </span>
-                  <span className="text-xs font-sans font-bold uppercase tracking-[1px] text-accent-orange">
-                    {study.category}
-                  </span>
-                </div>
-                
-                <h3 className="font-display font-bold text-[24px] md:text-[28px] leading-[1.2] text-brand-navy mb-4 group-hover:text-accent-orange transition-colors">
-                  {study.title}
-                </h3>
-                
-                <p className="font-sans text-[15px] leading-[1.7] text-secondary-text mb-8 flex-grow">
-                  <strong className="text-brand-navy">Challenge:</strong> {study.challenge}
-                </p>
-                
-                <div className="grid grid-cols-2 gap-4 mb-8 py-6 border-y border-border-warm">
-                  {study.metrics.map((metric, i) => (
-                    <div key={i}>
-                      <p className="font-stats text-[32px] text-accent-gold leading-none mb-1">{metric.value}</p>
-                      <p className="font-sans text-[11px] font-bold uppercase tracking-[1px] text-muted-text">{metric.label}</p>
+          {isLoading ? (
+            // Skeleton Loaders
+            Array.from({ length: 3 }).map((_, i) => (
+              <motion.div
+                key={`skeleton-${i}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm flex flex-col h-full"
+              >
+                <div className="h-48 w-full bg-gray-200 animate-pulse" />
+                <div className="p-8 flex-grow flex flex-col">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="h-6 w-24 bg-gray-200 rounded-full animate-pulse" />
+                    <div className="h-4 w-16 bg-gray-200 rounded animate-pulse" />
+                  </div>
+                  <div className="h-8 w-3/4 bg-gray-200 rounded mb-4 animate-pulse" />
+                  <div className="h-4 w-full bg-gray-200 rounded mb-2 animate-pulse" />
+                  <div className="h-4 w-5/6 bg-gray-200 rounded mb-8 animate-pulse" />
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-8 py-6 border-y border-border-warm">
+                    <div>
+                      <div className="h-8 w-16 bg-gray-200 rounded mb-2 animate-pulse" />
+                      <div className="h-3 w-12 bg-gray-200 rounded animate-pulse" />
                     </div>
-                  ))}
+                    <div>
+                      <div className="h-8 w-16 bg-gray-200 rounded mb-2 animate-pulse" />
+                      <div className="h-3 w-12 bg-gray-200 rounded animate-pulse" />
+                    </div>
+                  </div>
+                  
+                  <div className="h-5 w-32 bg-gray-200 rounded mt-auto animate-pulse" />
                 </div>
-                
-                <Link 
-                  href={`/case-studies/${study.slug}`}
-                  className="inline-flex items-center gap-2 font-sans font-medium text-[15px] text-brand-navy group-hover:text-accent-orange transition-colors uppercase tracking-[1px] mt-auto"
-                >
-                  Read Case Study <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))
+          ) : (
+            filteredStudies.map((study) => (
+              <motion.div
+                key={study.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
+              >
+                <div className="relative h-48 w-full overflow-hidden border-b border-border-warm">
+                  <Image 
+                    src={study.image} 
+                    alt={study.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors duration-500" />
+                </div>
+                <div className="p-8 flex-grow flex flex-col">
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="inline-block px-3 py-1 bg-secondary-bg text-brand-navy rounded-full text-xs font-sans font-bold uppercase tracking-[1px]">
+                      {study.industry}
+                    </span>
+                    <span className="text-xs font-sans font-bold uppercase tracking-[1px] text-accent-orange">
+                      {study.category}
+                    </span>
+                  </div>
+                  
+                  <h3 className="font-display font-bold text-[24px] md:text-[28px] leading-[1.2] text-brand-navy mb-4 group-hover:text-accent-orange transition-colors">
+                    {study.title}
+                  </h3>
+                  
+                  <p className="font-sans text-[15px] leading-[1.7] text-secondary-text mb-8 flex-grow">
+                    <strong className="text-brand-navy">Challenge:</strong> {study.challenge}
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-8 py-6 border-y border-border-warm">
+                    {study.metrics.map((metric, i) => (
+                      <div key={i}>
+                        <p className="font-stats text-[32px] text-accent-gold leading-none mb-1">{metric.value}</p>
+                        <p className="font-sans text-[11px] font-bold uppercase tracking-[1px] text-muted-text">{metric.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Link 
+                    href={`/case-studies/${study.slug}`}
+                    className="inline-flex items-center gap-2 font-sans font-medium text-[15px] text-brand-navy group-hover:text-accent-orange transition-colors uppercase tracking-[1px] mt-auto"
+                  >
+                    Read Case Study <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))
+          )}
         </AnimatePresence>
       </motion.div>
       
-      {filteredStudies.length === 0 && (
+      {!isLoading && filteredStudies.length === 0 && (
         <div className="text-center py-20">
           <p className="font-sans text-[18px] text-secondary-text">More case studies in this category coming soon.</p>
         </div>
