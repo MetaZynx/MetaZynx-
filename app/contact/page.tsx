@@ -123,7 +123,7 @@ export default function ContactPage() {
                 <div className="relative flex items-start gap-4">
                   <div className="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-sans font-bold text-[14px] flex-shrink-0 z-10 shadow-sm">2</div>
                   <div className="pt-1">
-                    <p className="font-sans font-bold text-[16px] text-brand-navy">Our strategist calls you</p>
+                    <p className="font-sans font-bold text-[16px] text-brand-navy">Divyam personally reviews your brand within 24hrs</p>
                   </div>
                 </div>
                 <div className="relative flex items-start gap-4">

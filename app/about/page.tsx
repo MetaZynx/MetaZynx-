@@ -8,7 +8,7 @@ import Testimonials from '@/components/Testimonials';
 
 export const metadata: Metadata = {
   title: 'About MetaZynx | 360° Performance Marketing Agency',
-  description: "Learn about MetaZynx — our story, our team, our values, and why the world's most ambitious brands trust us with their digital marketing.",
+  description: "MetaZynx was founded by Divyam Bajaj in 2022. $100K+ in affiliate revenue, multi-billion dollar brand experience, and proven Meta & Google Ads campaigns. This is performance marketing built on real results.",
   alternates: {
     canonical: 'https://www.metazynx.com/about',
   },
@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const timeline = [
-    { year: '2020', event: 'Founded' },
-    { year: '2021', event: 'First Campaign' },
-    { year: '2022', event: 'First $100K Month' },
-    { year: 'Today', event: '360° Agency' },
+    { year: '2022', event: 'MetaZynx Founded (April 2022)' },
+    { year: '2022', event: 'First Client Campaigns Launched' },
+    { year: '2023', event: 'Expanded Service Offerings' },
+    { year: 'Today', event: 'Full 360° Performance Agency' },
   ];
 
   const values = [
@@ -47,19 +47,22 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: 'Rahul Sharma',
+      name: 'Divyam Bajaj',
       role: 'Founder & CEO',
-      bio: '10+ years scaling e-commerce brands. Obsessed with data-driven growth strategies.',
+      bio: 'Founder of MetaZynx. $100K+ in affiliate revenue. Former account manager for multi-billion dollar brands. Meta & Google Ads specialist. Divyam engineers growth systems that deliver results — not vanity metrics.',
+      linkedin: 'https://www.linkedin.com/in/divyambajaj333'
     },
     {
       name: 'Priya Desai',
       role: 'Head of Performance',
       bio: 'Ex-Google. Master of Meta & Google Ads with a track record of 8x+ average ROAS.',
+      linkedin: '#'
     },
     {
       name: 'Anand Verma',
       role: 'Creative Director',
       bio: 'Award-winning designer turning brand visions into high-converting visual assets.',
+      linkedin: '#'
     }
   ];
 
@@ -151,10 +154,10 @@ export default function AboutPage() {
               From a single campaign to a 360° powerhouse.
             </h2>
             <p className="font-sans text-[18px] leading-[1.8] text-secondary-text mb-6">
-              MetaZynx was born out of frustration with the traditional agency model. Too many agencies focus on vanity metrics—likes, impressions, clicks—while ignoring what actually matters: revenue.
+              MetaZynx was founded in 2022 by Divyam Bajaj — not out of ambition alone, but out of proven experience. Before building MetaZynx, Divyam generated $100K+ in affiliate revenue through SEO-driven content and conversion optimization, managed accounts for multi-billion dollar companies, and ran Meta & Google Ads campaigns delivering measurable lead generation for real brands.
             </p>
             <p className="font-sans text-[18px] leading-[1.8] text-secondary-text">
-              We set out to build an agency that operates as an extension of your business. By bringing SEO, Paid Ads, Creative, Development, and ORM under one roof, we eliminate silos and create cohesive, high-performance strategies that drive undeniable growth.
+              MetaZynx was built on one belief: growth isn't accidental — it's engineered. By bringing SEO, Paid Ads, Creative, Development, ORM and Influencer marketing under one roof, we eliminate silos and build the kind of cohesive, high-performance strategies that drive undeniable revenue outcomes.
             </p>
           </div>
         </div>
@@ -207,7 +210,7 @@ export default function AboutPage() {
                 />
               </div>
               <div className="p-8 relative">
-                <a href="#" className="absolute -top-6 right-6 w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center hover:bg-accent-orange transition-colors shadow-lg hover:scale-[1.03] duration-200 ease-out">
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="absolute -top-6 right-6 w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center hover:bg-accent-orange transition-colors shadow-lg hover:scale-[1.03] duration-200 ease-out">
                   <Linkedin size={20} />
                 </a>
                 <h3 className="font-display font-bold text-[24px] text-brand-navy mb-1">{member.name}</h3>
