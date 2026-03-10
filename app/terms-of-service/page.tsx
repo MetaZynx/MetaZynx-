@@ -98,7 +98,7 @@ export default function TermsOfServicePage() {
       title: "9. Dispute Resolution & Governing Law",
       content: (
         <>
-          <p>These Terms shall be governed and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>
+          <p>These Terms shall be governed and construed in accordance with the applicable laws, without regard to its conflict of law provisions.</p>
           <p>Any dispute arising out of or in connection with these Terms, including any question regarding its existence, validity, or termination, shall be subject to the exclusive jurisdiction of the courts located in Chandigarh, India.</p>
         </>
       )

@@ -8,7 +8,7 @@ export default function Testimonials() {
     {
       quote: "MetaZynx completely transformed our digital presence. Within 6 months, our organic traffic tripled and our ROAS on Meta ads hit an all-time high of 6.2x. They don't just execute; they strategize like true partners.",
       name: "Rahul Sharma",
-      company: "GrowthBrand India",
+      company: "GrowthBrand",
       designation: "Chief Marketing Officer"
     },
     {

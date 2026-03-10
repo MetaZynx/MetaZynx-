@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const caseStudies = [
   {
@@ -17,7 +18,8 @@ const caseStudies = [
       { label: 'ROAS', value: '6.2x' },
       { label: 'CPA', value: '-42%' }
     ],
-    slug: 'ecommerce-6x-roas'
+    slug: 'ecommerce-6x-roas',
+    image: 'https://picsum.photos/seed/ecommerce-growth/800/600?blur=2'
   },
   {
     id: 2,
@@ -30,7 +32,8 @@ const caseStudies = [
       { label: 'Lead Volume', value: '+480%' },
       { label: 'CPL', value: '-35%' }
     ],
-    slug: 'real-estate-lead-generation'
+    slug: 'real-estate-lead-generation',
+    image: 'https://picsum.photos/seed/real-estate-abstract/800/600?blur=2'
   },
   {
     id: 3,
@@ -43,7 +46,8 @@ const caseStudies = [
       { label: 'Traffic', value: '+215%' },
       { label: 'Top 3 Ranks', value: '45+' }
     ],
-    slug: 'saas-organic-traffic-growth'
+    slug: 'saas-organic-traffic-growth',
+    image: 'https://picsum.photos/seed/saas-network/800/600?blur=2'
   },
   {
     id: 4,
@@ -56,7 +60,8 @@ const caseStudies = [
       { label: 'Rating', value: '4.8/5' },
       { label: 'Reviews', value: '1,200+' }
     ],
-    slug: 'healthcare-reputation-management'
+    slug: 'healthcare-reputation-management',
+    image: 'https://picsum.photos/seed/healthcare-trust/800/600?blur=2'
   },
   {
     id: 5,
@@ -69,7 +74,8 @@ const caseStudies = [
       { label: 'Load Time', value: '< 2s' },
       { label: 'Conv. Rate', value: '+40%' }
     ],
-    slug: 'd2c-retailer-conversion-lift'
+    slug: 'd2c-retailer-conversion-lift',
+    image: 'https://picsum.photos/seed/retail-speed/800/600?blur=2'
   },
   {
     id: 6,
@@ -82,7 +88,8 @@ const caseStudies = [
       { label: 'Views', value: '3M+' },
       { label: 'Engagement', value: '+310%' }
     ],
-    slug: 'luxury-resort-creator-marketing'
+    slug: 'luxury-resort-creator-marketing',
+    image: 'https://picsum.photos/seed/luxury-resort-social/800/600?blur=2'
   }
 ];
 
@@ -127,6 +134,16 @@ export default function CaseStudiesGrid() {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
             >
+              <div className="relative h-48 w-full overflow-hidden border-b border-border-warm">
+                <Image 
+                  src={study.image} 
+                  alt={study.title} 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors duration-500" />
+              </div>
               <div className="p-8 flex-grow flex flex-col">
                 <div className="flex items-center justify-between mb-6">
                   <span className="inline-block px-3 py-1 bg-secondary-bg text-brand-navy rounded-full text-xs font-sans font-bold uppercase tracking-[1px]">

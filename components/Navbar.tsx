@@ -22,7 +22,8 @@ export default function Navbar() {
 
   // Close mobile menu when route changes
   useEffect(() => {
-    setIsMobileMenuOpen(false);
+    const timer = setTimeout(() => setIsMobileMenuOpen(false), 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   // Prevent scrolling when mobile menu is open
@@ -54,7 +55,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" aria-label="MetaZynx Home" onClick={() => setIsMobileMenuOpen(false)}>
+        <Link href="/" aria-label="MetaZynx Home" onClick={() => setIsMobileMenuOpen(false)}>
           <Image
             src="https://i.ibb.co/5WnwLTjc/Meta-Zynx-Logo.png"
             alt="MetaZynx Logo"
@@ -67,7 +68,7 @@ export default function Navbar() {
               width: "auto",
             }}
           />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
