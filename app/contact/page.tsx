@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 import ContactForm from '@/components/ContactForm';
 
@@ -105,6 +105,15 @@ export default function ContactPage() {
                   <div>
                     <p className="font-sans text-[12px] text-secondary-text uppercase tracking-[1.5px] font-bold mb-1">Address</p>
                     <p className="font-display font-bold text-[22px] text-brand-navy">Chandigarh, India</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-secondary-bg rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Instagram size={20} className="text-accent-orange" />
+                  </div>
+                  <div>
+                    <p className="font-sans text-[12px] text-secondary-text uppercase tracking-[1.5px] font-bold mb-1">Instagram</p>
+                    <a href="https://www.instagram.com/metazynx/" target="_blank" rel="noopener noreferrer" className="font-display font-bold text-[22px] text-brand-navy hover:text-accent-orange transition-colors">@metazynx</a>
                   </div>
                 </li>
               </ul>

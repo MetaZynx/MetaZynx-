@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Taking a Healthcare Brand from 3.1 to 4.8 Stars | MetaZynx Case Study',
   description: 'Negative legacy reviews were severely damaging the brand\'s online reputation and directly impacting new patient acquisition.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/case-studies/healthcare-reputation-management',
+  },
 };
 
 export default function CaseStudyPage() {

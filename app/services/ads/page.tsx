@@ -7,6 +7,9 @@ import { CheckCircle2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Paid Performance Advertising | MetaZynx',
   description: 'Precision-targeted paid campaigns engineered for maximum return on ad spend and scalable customer acquisition.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/services/ads',
+  },
 };
 
 export default function AdsPage() {

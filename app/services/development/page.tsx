@@ -7,6 +7,9 @@ import { CheckCircle2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Web Development | MetaZynx',
   description: 'High-performance, conversion-optimised websites and landing pages built on modern tech stacks for serious brands.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/services/development',
+  },
 };
 
 export default function DevelopmentPage() {

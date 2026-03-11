@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'The 2026 Guide to Omnichannel Performance Marketing | MetaZynx Blog',
   description: 'Why siloed marketing channels kill ROAS and how to build a cohesive omnichannel strategy in 2026.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/omnichannel-performance-marketing-2026',
+  },
 };
 
 export default function BlogPost() {

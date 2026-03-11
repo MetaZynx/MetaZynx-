@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '10 Technical SEO Mistakes Costing You Traffic | MetaZynx Blog',
   description: 'Fixing technical SEO issues alone can increase organic traffic by 20-40% without creating a single new piece of content.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/technical-seo-mistakes',
+  },
 };
 
 export default function BlogPost() {

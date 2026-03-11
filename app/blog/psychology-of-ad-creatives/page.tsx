@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Design That Converts: The Psychology of Ad Creatives | MetaZynx Blog',
   description: 'How color affects purchase decisions, why pattern interrupts stop the scroll, and 5 psychological triggers that improve CTR.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/psychology-of-ad-creatives',
+  },
 };
 
 export default function BlogPost() {

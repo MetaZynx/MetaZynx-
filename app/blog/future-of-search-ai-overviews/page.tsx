@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'The Future of Search: AI Overviews and Your Organic Strategy | MetaZynx Blog',
   description: 'What Google AI Overviews are, how they reduce organic CTR, and what content still gets clicks.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/future-of-search-ai-overviews',
+  },
 };
 
 export default function BlogPost() {

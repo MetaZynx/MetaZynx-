@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Why Your Meta Ads Are Failing (And How to Fix Them) | MetaZynx Blog',
   description: 'Learn the 3 common mistakes killing your Meta Ads ROAS and why creative matters more than targeting.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/why-meta-ads-fail',
+  },
 };
 
 export default function BlogPost() {

@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'UGC is Dead. Long Live Authentic Creator Partnerships. | MetaZynx Blog',
   description: 'Why traditional UGC looks fake, how Gen-Z detects scripted content, and how to brief creators for authenticity.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/authentic-creator-partnerships',
+  },
 };
 
 export default function BlogPost() {

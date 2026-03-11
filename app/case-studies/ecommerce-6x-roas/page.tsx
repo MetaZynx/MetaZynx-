@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'How We Achieved 6.2x ROAS in 90 Days | MetaZynx Case Study',
   description: 'High CPA and severe creative fatigue on Meta Ads were destroying profit margins for a fast-growing D2C brand.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/case-studies/ecommerce-6x-roas',
+  },
 };
 
 export default function CaseStudyPage() {

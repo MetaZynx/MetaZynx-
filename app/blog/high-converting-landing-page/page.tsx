@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'How to Build a High-Converting Landing Page | MetaZynx Blog',
   description: 'What makes a landing page convert, the 5 essential elements, and how to match ad copy to landing page copy.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/high-converting-landing-page',
+  },
 };
 
 export default function BlogPost() {

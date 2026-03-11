@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '3M+ Organic Views for a Luxury Resort via Creator Marketing | MetaZynx Case Study',
   description: 'Low brand awareness and near-zero engagement among the Gen-Z and millennial traveler demographic despite a world-class property.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/case-studies/luxury-resort-creator-marketing',
+  },
 };
 
 export default function CaseStudyPage() {

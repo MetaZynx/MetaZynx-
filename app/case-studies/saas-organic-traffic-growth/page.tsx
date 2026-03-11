@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '215% Organic Traffic Growth for a B2B SaaS Brand | MetaZynx Case Study',
   description: 'Stuck on page 2 for high-intent bottom-of-funnel keywords despite having a strong product and decent domain authority.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/case-studies/saas-organic-traffic-growth',
+  },
 };
 
 export default function CaseStudyPage() {

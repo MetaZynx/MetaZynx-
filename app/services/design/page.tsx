@@ -7,6 +7,9 @@ import { CheckCircle2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Brand & Creative Design | MetaZynx',
   description: 'Premium visual identities and ad creatives that capture attention, build trust and drive measurable action.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/services/design',
+  },
 };
 
 export default function DesignPage() {

@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Sub-2s Load Time and 40% Conversion Lift for a D2C Retailer | MetaZynx Case Study',
   description: 'A slow, bloated legacy Shopify theme was causing massive cart abandonment and killing paid ad performance.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/case-studies/d2c-retailer-conversion-lift',
+  },
 };
 
 export default function CaseStudyPage() {

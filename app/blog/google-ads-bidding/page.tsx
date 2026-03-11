@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'The Ultimate Guide to Google Ads Bidding Strategies | MetaZynx Blog',
   description: 'Manual CPC vs Smart Bidding, when to use Target CPA or Target ROAS, and how to transition from manual to automated bidding.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/google-ads-bidding',
+  },
 };
 
 export default function BlogPost() {

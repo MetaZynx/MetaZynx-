@@ -72,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     },
     "sameAs": [
       "https://in.linkedin.com/company/metazynx",
-      "https://www.instagram.com/metazynx"
+      "https://www.instagram.com/metazynx/"
     ]
   };
 

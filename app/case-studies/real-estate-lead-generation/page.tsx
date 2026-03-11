@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '480% More Qualified Leads for a Real Estate Developer | MetaZynx Case Study',
   description: 'Generic search campaigns were generating high volume but dangerously low quality leads, wasting budget on unqualified prospects.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/case-studies/real-estate-lead-generation',
+  },
 };
 
 export default function CaseStudyPage() {

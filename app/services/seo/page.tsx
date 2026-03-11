@@ -7,6 +7,9 @@ import { CheckCircle2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'SEO & Content | MetaZynx',
   description: 'Dominate search rankings with data-driven strategies and high-converting content that drives organic growth month after month.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/services/seo',
+  },
 };
 
 export default function SEOPage() {

@@ -6,6 +6,9 @@ import { Globe, Rocket, TrendingUp, GraduationCap } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Careers | MetaZynx',
   description: 'Join the MetaZynx team. We are always looking for exceptional talent in performance marketing, graphic design, and web development.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/careers',
+  },
 };
 
 export default function CareersPage() {

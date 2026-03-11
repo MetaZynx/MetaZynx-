@@ -7,6 +7,9 @@ import { CheckCircle2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Influencer & UGC Marketing | MetaZynx',
   description: 'Authentic influencer campaigns and user-generated content that builds trust, social proof and measurable revenue at scale.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/services/influencer',
+  },
 };
 
 export default function InfluencerPage() {

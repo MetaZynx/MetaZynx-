@@ -7,6 +7,9 @@ import { CheckCircle2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Online Reputation Management | MetaZynx',
   description: "Proactive online reputation management that protects your brand's digital footprint and builds lasting consumer trust.",
+  alternates: {
+    canonical: 'https://www.metazynx.com/services/orm',
+  },
 };
 
 export default function ORMPage() {

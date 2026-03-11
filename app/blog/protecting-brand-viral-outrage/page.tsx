@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Protecting Your Brand in the Age of Viral Outrage | MetaZynx Blog',
   description: 'How fast brand crises spread in 2026 and how to build a proactive crisis response playbook.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/protecting-brand-viral-outrage',
+  },
 };
 
 export default function BlogPost() {

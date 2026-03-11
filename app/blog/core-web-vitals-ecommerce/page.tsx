@@ -6,6 +6,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Core Web Vitals: The Silent Killer of E-Commerce Conversion Rates | MetaZynx Blog',
   description: 'What Core Web Vitals are, how slow sites lose conversions, and 5 quick fixes for better performance.',
+  alternates: {
+    canonical: 'https://www.metazynx.com/blog/core-web-vitals-ecommerce',
+  },
 };
 
 export default function BlogPost() {
