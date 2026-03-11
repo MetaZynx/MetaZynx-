@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function ContactForm() {
-  const services = [
+  const availableServices = [
     "SEO & Content",
     "Meta & Google Ads",
     "Graphic Design",
@@ -20,12 +20,13 @@ export default function ContactForm() {
     email: "",
     budget: "",
     message: "",
-    selectedServices: [] as string[],
+    services: [] as string[],
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -52,43 +53,68 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      setIsSubmitting(true);
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({
-        fullName: "",
-        businessName: "",
-        phone: "",
-        email: "",
-        budget: "",
-        message: "",
-        selectedServices: [],
+    if (!validate()) return;
+
+    setIsSubmitting(true);
+    setSubmitError('');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          services: formData.services.join(', ')
+        })
       });
-      setTimeout(() => setIsSuccess(false), 5000);
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setSubmitError('Something went wrong. Please WhatsApp us at +91-6026767767');
+      }
+    } catch {
+      setSubmitError('Something went wrong. Please WhatsApp us at +91-6026767767');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const handleServiceToggle = (service: string) => {
     setFormData((prev) => ({
       ...prev,
-      selectedServices: prev.selectedServices.includes(service)
-        ? prev.selectedServices.filter((s) => s !== service)
-        : [...prev.selectedServices, service],
+      services: prev.services.includes(service)
+        ? prev.services.filter((s) => s !== service)
+        : [...prev.services, service],
     }));
   };
 
+  if (submitted) {
+    return (
+      <div style={{ textAlign:'center', padding:'80px 32px' }}>
+        <div style={{ fontSize:'72px', marginBottom:'24px' }}>✅</div>
+        <h2 style={{
+          fontFamily:'Syne, sans-serif',
+          color:'#1B2D5B',
+          fontSize:'36px',
+          fontWeight:'800',
+          marginBottom:'16px'
+        }}>
+          Request Received!
+        </h2>
+        <p style={{
+          color:'#4A4A4A',
+          fontSize:'18px',
+          maxWidth:'480px',
+          margin:'0 auto',
+          lineHeight:'1.6'
+        }}>
+          Divyam will personally review your brand within 24 hours and reach out to schedule your free audit.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {isSuccess && (
-        <div className="bg-green-50 border border-green-200 text-green-800 rounded-md p-4 mb-6 flex items-center gap-3">
-          <CheckCircle2 size={20} className="text-green-600" />
-          <p className="font-sans text-[14px] font-medium">Thank you! Your request has been received. We will be in touch shortly.</p>
-        </div>
-      )}
-
       <div>
         <label htmlFor="fullName" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Full Name *</label>
         <input
@@ -162,12 +188,12 @@ export default function ContactForm() {
       <div>
         <label className="block font-sans text-[14px] font-bold text-brand-navy mb-3">Services Interested In</label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {services.map((service, index) => (
+          {availableServices.map((service, index) => (
             <label key={index} className="flex items-center gap-3 cursor-pointer group">
               <div className="relative flex items-center justify-center">
                 <input
                   type="checkbox"
-                  checked={formData.selectedServices.includes(service)}
+                  checked={formData.services.includes(service)}
                   onChange={() => handleServiceToggle(service)}
                   className="peer appearance-none w-5 h-5 border border-border-warm rounded-sm checked:bg-accent-orange checked:border-accent-orange transition-colors cursor-pointer"
                 />
@@ -191,12 +217,19 @@ export default function ContactForm() {
         ></textarea>
       </div>
 
+      {submitError && (
+        <p style={{ color:'#E8440A', marginTop:'12px', fontSize:'14px' }}>
+          {submitError}
+        </p>
+      )}
+
       <button
         type="submit"
         disabled={isSubmitting}
+        style={{ opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}
         className="w-full h-[60px] bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md hover:scale-[1.03] hover:shadow-lg hover:shadow-accent-orange/20 transition-all duration-200 ease-out flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:scale-100"
       >
-        {isSubmitting ? "Submitting..." : "Request Free Audit"} <ArrowRight size={20} />
+        {isSubmitting ? "Sending..." : "Request Free Audit →"}
       </button>
     </form>
   );

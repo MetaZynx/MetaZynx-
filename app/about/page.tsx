@@ -157,7 +157,7 @@ export default function AboutPage() {
               MetaZynx was founded in 2022 by Divyam Bajaj — not out of ambition alone, but out of proven experience. Before building MetaZynx, Divyam generated $100K+ in affiliate revenue through SEO-driven content and conversion optimization, managed accounts for multi-billion dollar companies, and ran Meta & Google Ads campaigns delivering measurable lead generation for real brands.
             </p>
             <p className="font-sans text-[18px] leading-[1.8] text-secondary-text">
-              MetaZynx was built on one belief: growth isn't accidental — it's engineered. By bringing SEO, Paid Ads, Creative, Development, ORM and Influencer marketing under one roof, we eliminate silos and build the kind of cohesive, high-performance strategies that drive undeniable revenue outcomes.
+              MetaZynx was built on one belief: growth isn&apos;t accidental — it&apos;s engineered. By bringing SEO, Paid Ads, Creative, Development, ORM and Influencer marketing under one roof, we eliminate silos and build the kind of cohesive, high-performance strategies that drive undeniable revenue outcomes.
             </p>
           </div>
         </div>
