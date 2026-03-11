@@ -48,21 +48,43 @@ export default function AboutPage() {
   const team = [
     {
       name: 'Divyam Bajaj',
-      role: 'Founder & CEO',
+      role: 'FOUNDER & CEO',
       bio: 'Founder of MetaZynx. $100K+ in affiliate revenue. Former account manager for multi-billion dollar brands. Meta & Google Ads specialist. Divyam engineers growth systems that deliver results — not vanity metrics.',
-      linkedin: 'https://www.linkedin.com/in/divyambajaj333'
+      linkedin: 'https://www.linkedin.com/in/divyambajaj333',
+      avatar: {
+        bg: '#1B2D5B',
+        content: 'DB',
+        fontSize: '32px',
+        fontFamily: 'var(--font-display), Syne, sans-serif',
+        fontWeight: '800'
+      }
     },
     {
-      name: 'Priya Desai',
-      role: 'Head of Performance',
-      bio: 'Ex-Google. Master of Meta & Google Ads with a track record of 8x+ average ROAS.',
-      linkedin: '#'
+      name: 'Specialist Partner Network',
+      role: 'DELIVERY PARTNERS',
+      bio: 'MetaZynx operates with a curated network of vetted specialists — designers, developers, SEO experts and media buyers — ensuring every client gets senior-level execution across every channel.',
+      linkedin: null,
+      avatar: {
+        bg: '#E8440A',
+        content: '◎',
+        fontSize: '48px',
+        fontFamily: 'sans-serif',
+        fontWeight: 'normal'
+      }
     },
     {
-      name: 'Anand Verma',
-      role: 'Creative Director',
-      bio: 'Award-winning designer turning brand visions into high-converting visual assets.',
-      linkedin: '#'
+      name: 'Join Our Team',
+      role: 'WE\'RE HIRING',
+      bio: "We're growing fast and always looking for exceptional talent in performance marketing, graphic design, and web development. If you're results-obsessed — let's talk.",
+      linkedin: 'mailto:info@metazynx.com?subject=Job Application',
+      isEmail: true,
+      avatar: {
+        bg: '#1B2D5B',
+        content: '+',
+        fontSize: '56px',
+        fontFamily: 'sans-serif',
+        fontWeight: 'normal'
+      }
     }
   ];
 
@@ -198,26 +220,38 @@ export default function AboutPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team.map((member, index) => (
-            <div key={index} className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm group hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300">
-              {/* <!-- Replace with real team photos --> */}
-              <div className="h-64 bg-secondary-bg relative">
-                <Image
-                  src={`https://picsum.photos/seed/${member.name.replace(' ', '')}/600/600?blur=2`}
-                  alt={member.name}
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  referrerPolicy="no-referrer"
-                />
+            <div key={index} className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm group hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 flex flex-col">
+              <div className="h-64 bg-secondary-bg relative flex items-center justify-center">
+                <div 
+                  className="flex items-center justify-center text-white rounded-full transition-transform duration-500 group-hover:scale-110"
+                  style={{ 
+                    width: '120px', 
+                    height: '120px', 
+                    backgroundColor: member.avatar.bg,
+                    fontSize: member.avatar.fontSize,
+                    fontFamily: member.avatar.fontFamily,
+                    fontWeight: member.avatar.fontWeight
+                  }}
+                >
+                  {member.avatar.content}
+                </div>
               </div>
-              <div className="p-8 relative">
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="absolute -top-6 right-6 w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center hover:bg-accent-orange transition-colors shadow-lg hover:scale-[1.03] duration-200 ease-out">
-                  <Linkedin size={20} />
-                </a>
+              <div className="p-8 relative flex-grow flex flex-col">
+                {member.linkedin && !member.isEmail && (
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="absolute -top-6 right-6 w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center hover:bg-accent-orange transition-colors shadow-lg hover:scale-[1.03] duration-200 ease-out">
+                    <Linkedin size={20} />
+                  </a>
+                )}
                 <h3 className="font-display font-bold text-[24px] text-brand-navy mb-1">{member.name}</h3>
                 <p className="font-sans text-[14px] font-bold text-accent-orange uppercase tracking-[1px] mb-4">{member.role}</p>
-                <p className="font-sans text-[15px] leading-[1.7] text-secondary-text">
+                <p className="font-sans text-[15px] leading-[1.7] text-secondary-text mb-4 flex-grow">
                   {member.bio}
                 </p>
+                {member.isEmail && (
+                  <a href={member.linkedin} className="inline-block font-sans text-[14px] font-bold text-brand-navy hover:text-accent-orange transition-colors mt-auto">
+                    Send Your CV &rarr;
+                  </a>
+                )}
               </div>
             </div>
           ))}

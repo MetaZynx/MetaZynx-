@@ -7,20 +7,20 @@ export default function Testimonials() {
   const testimonials = [
     {
       quote: "MetaZynx completely transformed our digital presence. Within 6 months, our organic traffic tripled and our ROAS on Meta ads hit an all-time high of 6.2x. They don't just execute; they strategize like true partners.",
-      name: "Rahul Sharma",
-      company: "GrowthBrand",
+      name: "Karan Malhotra",
+      company: "RetailMax",
       designation: "Chief Marketing Officer"
     },
     {
       quote: "We were managing 3 different agencies before MetaZynx. Bringing everything under their 360° umbrella was the best decision we made. The synergy between SEO, Paid Ads, and Creative is incredible.",
-      name: "Priya Desai",
+      name: "Siddharth Nair",
       company: "FinServe Pro",
       designation: "VP of Digital Strategy"
     },
     {
       quote: "Their data-first approach is refreshing. No vanity metrics, just hard numbers that impact the bottom line. Our cost per acquisition dropped by 40% while lead quality improved significantly.",
-      name: "Anand Verma",
-      company: "EduFirst Solutions",
+      name: "Neha Agarwal",
+      company: "EduFirst",
       designation: "Founder & CEO"
     }
   ];
