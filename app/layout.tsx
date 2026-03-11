@@ -77,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable} ${bebasNeue.variable}`}>
+    <html lang="en" className={`${syne.variable} ${dmSans.variable} ${bebasNeue.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

@@ -22,4 +22,24 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  @keyframes floatOrb1 {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(40px, 30px) scale(1.05); }
+    66% { transform: translate(-20px, 50px) scale(0.95); }
+  }
+  @keyframes floatOrb2 {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(-50px, 40px) scale(1.08); }
+    66% { transform: translate(30px, -30px) scale(0.97); }
+  }
+  @keyframes floatOrb3 {
+    0%, 100% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-30px); }
+  }
 }
