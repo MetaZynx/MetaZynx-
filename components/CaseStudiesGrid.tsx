@@ -125,8 +125,8 @@ export default function CaseStudiesGrid() {
             disabled={isLoading}
             className={`px-6 py-2.5 rounded-full font-sans font-bold text-[14px] uppercase tracking-[1px] transition-all duration-300 ${
               activeFilter === category
-                ? 'bg-brand-navy text-white shadow-md'
-                : 'bg-white text-secondary-text border border-border-warm hover:border-brand-navy hover:text-brand-navy'
+                ? 'bg-primary-text text-primary-bg shadow-md'
+                : 'bg-secondary-bg text-secondary-text border border-border-glass hover:border-primary-text hover:text-primary-text'
             } ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             {category}
@@ -146,30 +146,30 @@ export default function CaseStudiesGrid() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm flex flex-col h-full"
+                className="bg-card-bg rounded-2xl border border-border-glass overflow-hidden shadow-sm flex flex-col h-full"
               >
-                <div className="h-48 w-full bg-gray-200 animate-pulse" />
+                <div className="h-48 w-full bg-secondary-bg animate-pulse" />
                 <div className="p-8 flex-grow flex flex-col">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="h-6 w-24 bg-gray-200 rounded-full animate-pulse" />
-                    <div className="h-4 w-16 bg-gray-200 rounded animate-pulse" />
+                    <div className="h-6 w-24 bg-secondary-bg rounded-full animate-pulse" />
+                    <div className="h-4 w-16 bg-secondary-bg rounded animate-pulse" />
                   </div>
-                  <div className="h-8 w-3/4 bg-gray-200 rounded mb-4 animate-pulse" />
-                  <div className="h-4 w-full bg-gray-200 rounded mb-2 animate-pulse" />
-                  <div className="h-4 w-5/6 bg-gray-200 rounded mb-8 animate-pulse" />
+                  <div className="h-8 w-3/4 bg-secondary-bg rounded mb-4 animate-pulse" />
+                  <div className="h-4 w-full bg-secondary-bg rounded mb-2 animate-pulse" />
+                  <div className="h-4 w-5/6 bg-secondary-bg rounded mb-8 animate-pulse" />
                   
-                  <div className="grid grid-cols-2 gap-4 mb-8 py-6 border-y border-border-warm">
+                  <div className="grid grid-cols-2 gap-4 mb-8 py-6 border-y border-border-glass">
                     <div>
-                      <div className="h-8 w-16 bg-gray-200 rounded mb-2 animate-pulse" />
-                      <div className="h-3 w-12 bg-gray-200 rounded animate-pulse" />
+                      <div className="h-8 w-16 bg-secondary-bg rounded mb-2 animate-pulse" />
+                      <div className="h-3 w-12 bg-secondary-bg rounded animate-pulse" />
                     </div>
                     <div>
-                      <div className="h-8 w-16 bg-gray-200 rounded mb-2 animate-pulse" />
-                      <div className="h-3 w-12 bg-gray-200 rounded animate-pulse" />
+                      <div className="h-8 w-16 bg-secondary-bg rounded mb-2 animate-pulse" />
+                      <div className="h-3 w-12 bg-secondary-bg rounded animate-pulse" />
                     </div>
                   </div>
                   
-                  <div className="h-5 w-32 bg-gray-200 rounded mt-auto animate-pulse" />
+                  <div className="h-5 w-32 bg-secondary-bg rounded mt-auto animate-pulse" />
                 </div>
               </motion.div>
             ))
@@ -182,9 +182,9 @@ export default function CaseStudiesGrid() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
+                className="bg-card-bg rounded-2xl border border-border-glass overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
               >
-                <div className="relative h-48 w-full overflow-hidden border-b border-border-warm">
+                <div className="relative h-48 w-full overflow-hidden border-b border-border-glass">
                   <Image 
                     src={study.image} 
                     alt={study.title} 
@@ -192,30 +192,30 @@ export default function CaseStudiesGrid() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-primary-bg/10 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
                 <div className="p-8 flex-grow flex flex-col">
                   <div className="flex items-center justify-between mb-6">
-                    <span className="inline-block px-3 py-1 bg-secondary-bg text-brand-navy rounded-full text-xs font-sans font-bold uppercase tracking-[1px]">
+                    <span className="inline-block px-3 py-1 bg-secondary-bg text-primary-text rounded-full text-xs font-sans font-bold uppercase tracking-[1px]">
                       {study.industry}
                     </span>
-                    <span className="text-xs font-sans font-bold uppercase tracking-[1px] text-accent-orange">
+                    <span className="text-xs font-sans font-bold uppercase tracking-[1px] text-brand-action">
                       {study.category}
                     </span>
                   </div>
                   
-                  <h3 className="font-display font-bold text-[24px] md:text-[28px] leading-[1.2] text-brand-navy mb-4 group-hover:text-accent-orange transition-colors">
+                  <h3 className="font-sans font-bold text-[24px] md:text-[28px] leading-[1.2] text-primary-text mb-4 group-hover:text-brand-action transition-colors">
                     {study.title}
                   </h3>
                   
                   <p className="font-sans text-[15px] leading-[1.7] text-secondary-text mb-8 flex-grow">
-                    <strong className="text-brand-navy">Challenge:</strong> {study.challenge}
+                    <strong className="text-primary-text">Challenge:</strong> {study.challenge}
                   </p>
                   
-                  <div className="grid grid-cols-2 gap-4 mb-8 py-6 border-y border-border-warm">
+                  <div className="grid grid-cols-2 gap-4 mb-8 py-6 border-y border-border-glass">
                     {study.metrics.map((metric, i) => (
                       <div key={i}>
-                        <p className="font-stats text-[32px] text-accent-gold leading-none mb-1">{metric.value}</p>
+                        <p className="font-mono font-bold text-[32px] text-primary-text leading-none mb-1">{metric.value}</p>
                         <p className="font-sans text-[11px] font-bold uppercase tracking-[1px] text-muted-text">{metric.label}</p>
                       </div>
                     ))}
@@ -223,7 +223,7 @@ export default function CaseStudiesGrid() {
                   
                   <Link 
                     href={`/case-studies/${study.slug}`}
-                    className="inline-flex items-center gap-2 font-sans font-medium text-[15px] text-brand-navy group-hover:text-accent-orange transition-colors uppercase tracking-[1px] mt-auto"
+                    className="inline-flex items-center gap-2 font-sans font-medium text-[15px] text-primary-text group-hover:text-brand-action transition-colors uppercase tracking-[1px] mt-auto"
                   >
                     Read Case Study <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </Link>

@@ -4,7 +4,9 @@ import { motion } from 'motion/react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import HeroCyclingWord from './HeroCyclingWord';
-import HeroBackground from './HeroBackground';
+import dynamic from 'next/dynamic';
+
+const HeroSlider = dynamic(() => import('@/components/HeroSlider'), { ssr: false });
 
 export default function Hero() {
   return (
@@ -12,28 +14,16 @@ export default function Hero() {
       <section 
         className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#FAFAF8]"
       >
-        <HeroBackground />
+        <HeroSlider />
         <div className="w-full max-w-[900px] mx-auto px-6 py-[120px] flex flex-col items-center text-center relative z-10">
           
-          {/* Element 1 — Top Label */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-[rgba(27,45,91,0.06)] border border-[rgba(27,45,91,0.12)] rounded-full px-4 py-2 mb-8 md:mb-10"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E8440A] inline-block animate-[pulse_2s_infinite]" />
-            <span className="font-sans text-[10px] md:text-[13px] font-medium color-[#1B2D5B] tracking-[1px] md:tracking-[1.5px] uppercase">
-              360° Performance Marketing Agency
-            </span>
-          </motion.div>
-
           {/* Element 2 — Animated Headline */}
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display font-extrabold text-[32px] sm:text-[42px] md:text-[72px] leading-[1.1] tracking-[-1px] md:tracking-[-2px] text-brand-navy mb-6"
+            className="font-display font-extrabold leading-[1.05] tracking-[-0.03em] text-[#0D0D0D] mb-8"
+            style={{ fontSize: "clamp(42px, 6vw, 72px)" }}
           >
             <span className="block">We Don&apos;t Just Run Campaigns.</span>
             <span className="block">We Build <HeroCyclingWord />.</span>
@@ -44,7 +34,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans font-light text-[16px] md:text-[20px] leading-[1.6] md:leading-[1.7] max-w-[600px] mx-auto text-[#4A4A4A]"
+            className="font-sans font-normal text-[18px] md:text-[22px] leading-[1.6] max-w-[640px] mx-auto text-[#4A4A4A]"
           >
             The world&apos;s most ambitious brands trust MetaZynx to deliver 
             performance across every digital channel — SEO, Paid Ads, 
@@ -60,13 +50,13 @@ export default function Hero() {
           >
             <Link 
               href="/contact"
-              className="group font-display font-semibold text-[15px] uppercase tracking-[1.5px] rounded-[4px] flex items-center justify-center gap-2 transition-all duration-300 hover:-translate-y-[2px] bg-[#E8440A] hover:bg-[#C73508] text-white px-[40px] py-[18px]"
+              className="group font-sans font-medium text-[15px] tracking-[0.5px] rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:-translate-y-[2px] bg-[#0D0D0D] hover:bg-[#333333] text-white px-[36px] py-[16px] shadow-sm"
             >
               Start Your Growth Journey <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link 
               href="/case-studies"
-              className="font-display font-semibold text-[15px] uppercase tracking-[1.5px] rounded-[4px] flex items-center justify-center transition-all duration-300 hover:-translate-y-[2px] bg-transparent hover:bg-[#1B2D5B] text-[#1B2D5B] hover:text-white border-2 border-[#1B2D5B] px-[40px] py-[16px]"
+              className="font-sans font-medium text-[15px] tracking-[0.5px] rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-[2px] bg-white hover:bg-gray-50 text-[#0D0D0D] border border-gray-200 px-[36px] py-[16px] shadow-sm"
             >
               View Our Work
             </Link>

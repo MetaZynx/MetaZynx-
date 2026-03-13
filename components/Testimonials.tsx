@@ -26,33 +26,37 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-secondary-bg border-y border-border-warm">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="text-center mb-16">
-          <span className="font-sans font-bold text-xs text-accent-orange uppercase tracking-[2px] mb-4 block">Client Success</span>
-          <h2 className="font-display font-bold text-[32px] md:text-[48px] text-brand-navy tracking-[-1px] max-w-3xl mx-auto">
+    <section className="py-24 md:py-32 bg-secondary-bg border-y border-border-glass relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="text-center mb-16 md:mb-24">
+          <span className="font-mono font-medium text-[13px] text-brand-action uppercase tracking-[2px] mb-4 block">
+            [ Client Success ]
+          </span>
+          <h2 className="font-sans font-bold text-[40px] md:text-[56px] text-primary-text tracking-tighter leading-[1.1] max-w-3xl mx-auto">
             Don&apos;t Just Take Our Word For It.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card-bg p-10 rounded-xl border border-border-warm shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 relative"
+              className="bg-card-bg p-8 md:p-10 rounded-2xl border border-border-glass hover:border-brand-action/30 transition-all duration-300 relative group flex flex-col h-full"
             >
-              <Quote size={48} className="text-accent-orange/20 absolute top-8 right-8" />
-              <p className="font-sans text-[17px] leading-[1.75] text-secondary-text mb-8 italic relative z-10">
+              <Quote size={40} className="text-brand-action/20 absolute top-8 right-8 group-hover:text-brand-action/40 transition-colors duration-300" />
+              
+              <p className="font-sans text-[16px] leading-[1.7] text-secondary-text mb-8 italic relative z-10 flex-grow">
                 &quot;{testimonial.quote}&quot;
               </p>
-              <div className="border-t border-border-warm pt-6">
-                <p className="font-display font-bold text-[18px] text-brand-navy mb-1">{testimonial.name}</p>
-                <p className="font-sans text-[13px] text-muted-text uppercase tracking-[1px] font-medium">{testimonial.designation}</p>
-                <p className="font-sans text-[13px] text-accent-orange font-medium mt-1">{testimonial.company}</p>
+              
+              <div className="border-t border-border-glass pt-6 mt-auto">
+                <p className="font-sans font-bold text-[18px] text-primary-text mb-1 tracking-tight">{testimonial.name}</p>
+                <p className="font-mono text-[12px] text-muted-text uppercase tracking-[1px] mb-1">{testimonial.designation}</p>
+                <p className="font-sans text-[14px] text-brand-action font-medium">{testimonial.company}</p>
               </div>
             </motion.div>
           ))}

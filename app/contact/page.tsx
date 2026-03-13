@@ -1,6 +1,4 @@
 import { Metadata } from 'next';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 import ContactForm from '@/components/ContactForm';
@@ -38,24 +36,20 @@ export default function ContactPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-primary-bg flex flex-col">
-      <Navbar />
-      
+    <main className="min-h-screen bg-primary-bg flex flex-col pt-24">
       {/* Hero Section */}
-      <section className="bg-brand-navy pt-40 pb-24 px-6 md:px-12 text-center relative overflow-hidden">
-        <div 
-          className="absolute inset-0 pointer-events-none opacity-[0.05] z-0"
-          style={{
-            backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }}
-        />
+      <section className="bg-primary-bg pt-20 pb-24 px-6 md:px-12 text-center relative overflow-hidden border-b border-border-glass">
+        <div className="absolute inset-0 bg-grid-pattern opacity-50 z-0 pointer-events-none"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h1 className="font-display font-extrabold text-[48px] md:text-[72px] leading-[1.1] tracking-[-2px] text-secondary-bg mb-6">
-            Let&apos;s Build Something Great Together
+          <span className="font-mono font-medium text-[13px] text-brand-action uppercase tracking-[2px] mb-6 block">
+            [ Contact Us ]
+          </span>
+          <h1 className="font-sans font-black text-[48px] md:text-[72px] leading-[1.05] tracking-tighter text-primary-text mb-6">
+            Let&apos;s Build Something <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-text to-secondary-text">Great Together</span>
           </h1>
-          <p className="font-sans text-[19px] md:text-[22px] text-gray-300 max-w-2xl mx-auto">
-            Book a free 360° marketing audit for your brand. No commitments, just actionable insights.
+          <p className="font-sans text-[19px] md:text-[22px] text-secondary-text max-w-2xl mx-auto leading-[1.6]">
+            Book a free 360° technical and marketing audit for your brand. No commitments, just actionable insights.
           </p>
         </div>
       </section>
@@ -66,8 +60,8 @@ export default function ContactPage() {
           
           {/* Left Column: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white p-8 md:p-10 rounded-2xl border border-border-warm shadow-sm">
-              <h2 className="font-display font-bold text-[32px] text-brand-navy mb-8">Request Your Free Audit</h2>
+            <div className="bg-card-bg p-8 md:p-10 rounded-2xl border border-border-glass shadow-sm">
+              <h2 className="font-sans font-bold text-[32px] text-primary-text mb-8 tracking-tight">Request Your Free Audit</h2>
               
               <ContactForm />
             </div>
@@ -78,67 +72,67 @@ export default function ContactPage() {
             
             {/* Contact Info */}
             <div>
-              <h3 className="font-display font-bold text-[28px] text-brand-navy mb-6">Contact Information</h3>
+              <h3 className="font-sans font-bold text-[28px] text-primary-text mb-6 tracking-tight">Contact Information</h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secondary-bg rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Phone size={20} className="text-accent-orange" />
+                  <div className="w-12 h-12 bg-secondary-bg rounded-xl flex items-center justify-center flex-shrink-0 mt-1 border border-border-glass">
+                    <Phone size={20} className="text-brand-action" />
                   </div>
                   <div>
-                    <p className="font-sans text-[12px] text-secondary-text uppercase tracking-[1.5px] font-bold mb-1">Call Us</p>
-                    <a href="tel:+916026767767" className="font-display font-bold text-[22px] text-brand-navy hover:text-accent-orange transition-colors">+91-6026767767</a>
+                    <p className="font-mono text-[12px] text-muted-text uppercase tracking-[1.5px] font-medium mb-1">Call Us</p>
+                    <a href="tel:+916026767767" className="font-sans font-bold text-[22px] text-primary-text hover:text-brand-action transition-colors">+91-6026767767</a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secondary-bg rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Mail size={20} className="text-accent-orange" />
+                  <div className="w-12 h-12 bg-secondary-bg rounded-xl flex items-center justify-center flex-shrink-0 mt-1 border border-border-glass">
+                    <Mail size={20} className="text-brand-action" />
                   </div>
                   <div>
-                    <p className="font-sans text-[12px] text-secondary-text uppercase tracking-[1.5px] font-bold mb-1">Email Us</p>
-                    <a href="mailto:info@metazynx.com" className="font-display font-bold text-[22px] text-brand-navy hover:text-accent-orange transition-colors">info@metazynx.com</a>
+                    <p className="font-mono text-[12px] text-muted-text uppercase tracking-[1.5px] font-medium mb-1">Email Us</p>
+                    <a href="mailto:info@metazynx.com" className="font-sans font-bold text-[22px] text-primary-text hover:text-brand-action transition-colors">info@metazynx.com</a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secondary-bg rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <MapPin size={20} className="text-accent-orange" />
+                  <div className="w-12 h-12 bg-secondary-bg rounded-xl flex items-center justify-center flex-shrink-0 mt-1 border border-border-glass">
+                    <MapPin size={20} className="text-brand-action" />
                   </div>
                   <div>
-                    <p className="font-sans text-[12px] text-secondary-text uppercase tracking-[1.5px] font-bold mb-1">Address</p>
-                    <p className="font-display font-bold text-[22px] text-brand-navy">Chandigarh, India</p>
+                    <p className="font-mono text-[12px] text-muted-text uppercase tracking-[1.5px] font-medium mb-1">Address</p>
+                    <p className="font-sans font-bold text-[22px] text-primary-text">Chandigarh, India</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secondary-bg rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Instagram size={20} className="text-accent-orange" />
+                  <div className="w-12 h-12 bg-secondary-bg rounded-xl flex items-center justify-center flex-shrink-0 mt-1 border border-border-glass">
+                    <Instagram size={20} className="text-brand-action" />
                   </div>
                   <div>
-                    <p className="font-sans text-[12px] text-secondary-text uppercase tracking-[1.5px] font-bold mb-1">Instagram</p>
-                    <a href="https://www.instagram.com/metazynx/" target="_blank" rel="noopener noreferrer" className="font-display font-bold text-[22px] text-brand-navy hover:text-accent-orange transition-colors">@metazynx</a>
+                    <p className="font-mono text-[12px] text-muted-text uppercase tracking-[1.5px] font-medium mb-1">Instagram</p>
+                    <a href="https://www.instagram.com/metazynx/" target="_blank" rel="noopener noreferrer" className="font-sans font-bold text-[22px] text-primary-text hover:text-brand-action transition-colors">@metazynx</a>
                   </div>
                 </li>
               </ul>
             </div>
 
             {/* What Happens Next */}
-            <div className="bg-secondary-bg p-8 rounded-2xl border border-border-warm">
-              <h3 className="font-display font-bold text-[24px] text-brand-navy mb-6">What happens next?</h3>
-              <div className="space-y-6 relative before:absolute before:inset-0 before:ml-[15px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border-warm before:to-transparent">
+            <div className="bg-secondary-bg p-8 rounded-2xl border border-border-glass">
+              <h3 className="font-sans font-bold text-[24px] text-primary-text mb-6 tracking-tight">What happens next?</h3>
+              <div className="space-y-6 relative before:absolute before:inset-0 before:ml-[15px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border-glass before:to-transparent">
                 <div className="relative flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-sans font-bold text-[14px] flex-shrink-0 z-10 shadow-sm">1</div>
+                  <div className="w-8 h-8 rounded-full bg-primary-bg border border-border-glass text-primary-text flex items-center justify-center font-mono font-bold text-[14px] flex-shrink-0 z-10 shadow-sm">1</div>
                   <div className="pt-1">
-                    <p className="font-sans font-bold text-[16px] text-brand-navy">We review your brand within 24hrs</p>
+                    <p className="font-sans font-bold text-[16px] text-primary-text">We review your brand within 24hrs</p>
                   </div>
                 </div>
                 <div className="relative flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-sans font-bold text-[14px] flex-shrink-0 z-10 shadow-sm">2</div>
+                  <div className="w-8 h-8 rounded-full bg-primary-bg border border-border-glass text-primary-text flex items-center justify-center font-mono font-bold text-[14px] flex-shrink-0 z-10 shadow-sm">2</div>
                   <div className="pt-1">
-                    <p className="font-sans font-bold text-[16px] text-brand-navy">Divyam personally reviews your brand within 24hrs</p>
+                    <p className="font-sans font-bold text-[16px] text-primary-text">Divyam personally reviews your brand within 24hrs</p>
                   </div>
                 </div>
                 <div className="relative flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-accent-orange text-white flex items-center justify-center font-sans font-bold text-[14px] flex-shrink-0 z-10 shadow-sm">3</div>
+                  <div className="w-8 h-8 rounded-full bg-brand-action text-white flex items-center justify-center font-mono font-bold text-[14px] flex-shrink-0 z-10 shadow-sm">3</div>
                   <div className="pt-1">
-                    <p className="font-sans font-bold text-[16px] text-brand-navy">You receive a free custom audit report</p>
+                    <p className="font-sans font-bold text-[16px] text-primary-text">You receive a free custom audit report</p>
                   </div>
                 </div>
               </div>
@@ -149,11 +143,11 @@ export default function ContactPage() {
       </section>
 
       {/* Google Maps Placeholder */}
-      <section className="w-full h-[400px] bg-gray-200 relative flex items-center justify-center border-y border-border-warm">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div className="relative z-10 bg-white px-8 py-4 rounded-full shadow-lg flex items-center gap-3">
-          <MapPin className="text-accent-orange" size={24} />
-          <span className="font-display font-bold text-[20px] text-brand-navy">Our Location: Chandigarh</span>
+      <section className="w-full h-[400px] bg-secondary-bg relative flex items-center justify-center border-y border-border-glass overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30 z-0 pointer-events-none"></div>
+        <div className="relative z-10 bg-card-bg px-8 py-4 rounded-full shadow-lg flex items-center gap-3 border border-border-glass">
+          <MapPin className="text-brand-action" size={24} />
+          <span className="font-sans font-bold text-[20px] text-primary-text">Our Location: Chandigarh</span>
         </div>
       </section>
 
@@ -161,17 +155,20 @@ export default function ContactPage() {
       <section className="py-24 bg-primary-bg">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
           <div className="text-center mb-16">
-            <h2 className="font-display font-bold text-[36px] md:text-[48px] text-brand-navy tracking-[-1px]">
+            <span className="font-mono font-medium text-[13px] text-brand-action uppercase tracking-[2px] mb-4 block">
+              [ FAQ ]
+            </span>
+            <h2 className="font-sans font-bold text-[36px] md:text-[48px] text-primary-text tracking-tighter leading-[1.1]">
               Frequently Asked Questions
             </h2>
           </div>
           
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <details key={index} className="group bg-white rounded-xl border border-border-warm overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                <summary className="flex items-center justify-between cursor-pointer p-6 font-display font-bold text-[18px] text-brand-navy">
+              <details key={index} className="group bg-card-bg rounded-xl border border-border-glass overflow-hidden [&_summary::-webkit-details-marker]:hidden hover:border-brand-action/30 transition-colors">
+                <summary className="flex items-center justify-between cursor-pointer p-6 font-sans font-bold text-[18px] text-primary-text tracking-tight">
                   {faq.question}
-                  <span className="transition group-open:rotate-180">
+                  <span className="transition group-open:rotate-180 text-muted-text">
                     <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                   </span>
                 </summary>
@@ -183,8 +180,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { ThemeToggle } from './ThemeToggle';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,18 +51,19 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4 border-b border-gray-100' : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" aria-label="MetaZynx Home" onClick={() => setIsMobileMenuOpen(false)}>
+        <Link href="/" aria-label="Metazynx Home" onClick={() => setIsMobileMenuOpen(false)}>
           <Image
             src="https://i.ibb.co/5WnwLTjc/Meta-Zynx-Logo.png"
-            alt="MetaZynx Logo"
+            alt="Metazynx Logo"
             width={160}
             height={48}
             priority
+            className="dark:invert dark:brightness-0"
             style={{
               objectFit: "contain",
               height: "40px",
@@ -79,15 +81,15 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative font-sans font-medium text-[15px] transition-colors py-2 ${
-                  isActive ? 'text-accent-orange' : 'text-primary-text hover:text-accent-orange'
+                className={`relative font-sans font-bold text-[13px] uppercase tracking-widest transition-colors py-2 ${
+                  isActive ? 'text-[#0F172A]' : 'text-gray-500 hover:text-[#0F172A]'
                 }`}
               >
                 {link.name}
                 {isActive && (
                   <motion.div
                     layoutId="navbar-active-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent-orange"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#FF4D00]"
                     initial={false}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
@@ -97,24 +99,28 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
+        {/* Desktop CTA & Theme Toggle */}
+        <div className="hidden md:flex items-center gap-4">
+          <ThemeToggle />
           <Link
             href="/contact"
-            className="bg-accent-orange text-white font-sans font-medium text-[15px] uppercase tracking-[1.5px] px-6 py-3 rounded-md hover:scale-[1.03] hover:shadow-lg hover:shadow-accent-orange/20 transition-all duration-200 ease-out inline-block"
+            className="bg-[#0F172A] text-white font-sans font-bold text-[13px] uppercase tracking-widest px-6 py-3 rounded-md hover:bg-[#FF4D00] transition-all duration-300 ease-out inline-block"
           >
             Get Free Audit
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden z-50 text-brand-navy"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <ThemeToggle />
+          <button
+            className="z-50 text-[#0F172A]"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Drawer */}
@@ -125,7 +131,7 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-0 bg-primary-bg z-40 flex flex-col pt-24 px-6"
+            className="fixed inset-0 bg-white z-40 flex flex-col pt-24 px-6"
           >
             <nav className="flex flex-col gap-6">
               {navLinks.map((link) => {
@@ -134,7 +140,7 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`font-display font-bold text-3xl ${isActive ? 'text-accent-orange' : 'text-brand-navy'}`}
+                    className={`font-sans font-bold text-3xl uppercase tracking-wider ${isActive ? 'text-[#FF4D00]' : 'text-[#0F172A]'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
@@ -143,7 +149,7 @@ export default function Navbar() {
               })}
               <Link
                 href="/contact"
-                className="bg-accent-orange text-white font-sans font-medium text-center text-[15px] uppercase tracking-[1.5px] px-6 py-4 rounded-md mt-4 hover:scale-[1.03] transition-all duration-200 ease-out"
+                className="bg-[#0F172A] text-white font-sans font-bold text-center text-[15px] uppercase tracking-widest px-6 py-4 rounded-md mt-4 hover:bg-[#FF4D00] transition-all duration-300 ease-out"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Get Free Audit

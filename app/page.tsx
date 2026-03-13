@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import SocialProof from '@/components/SocialProof';
 import Services from '@/components/Services';
@@ -8,11 +7,10 @@ import Process from '@/components/Process';
 import Testimonials from '@/components/Testimonials';
 import BlogPreview from '@/components/BlogPreview';
 import FinalCTA from '@/components/FinalCTA';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'MetaZynx | 360° Performance Marketing Agency',
-  description: 'MetaZynx is a premier performance marketing agency delivering measurable growth through SEO, Paid Ads, Design, and Development.',
+  title: 'Metazynx | High-Performance Tech Agency',
+  description: 'Metazynx transforms complex technical challenges into scalable, high-performance software that drives measurable ROI and market leadership.',
   alternates: {
     canonical: 'https://www.metazynx.com',
   },
@@ -21,7 +19,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-primary-bg flex flex-col">
-      <Navbar />
       <Hero />
       <SocialProof />
       <Services />
@@ -30,7 +27,6 @@ export default function Home() {
       <Testimonials />
       <BlogPreview />
       <FinalCTA />
-      <Footer />
     </main>
   );
 }

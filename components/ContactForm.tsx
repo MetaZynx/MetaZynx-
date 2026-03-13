@@ -89,24 +89,12 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div style={{ textAlign:'center', padding:'80px 32px' }}>
-        <div style={{ fontSize:'72px', marginBottom:'24px' }}>✅</div>
-        <h2 style={{
-          fontFamily:'Syne, sans-serif',
-          color:'#1B2D5B',
-          fontSize:'36px',
-          fontWeight:'800',
-          marginBottom:'16px'
-        }}>
+      <div className="text-center py-20 px-8">
+        <div className="text-[72px] mb-6">✅</div>
+        <h2 className="font-sans font-black text-[36px] text-primary-text mb-4 tracking-tight">
           Request Received!
         </h2>
-        <p style={{
-          color:'#4A4A4A',
-          fontSize:'18px',
-          maxWidth:'480px',
-          margin:'0 auto',
-          lineHeight:'1.6'
-        }}>
+        <p className="font-sans text-[18px] text-secondary-text max-w-[480px] mx-auto leading-[1.6]">
           Divyam will personally review your brand within 24 hours and reach out to schedule your free audit.
         </p>
       </div>
@@ -116,13 +104,13 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="fullName" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Full Name *</label>
+        <label htmlFor="fullName" className="block font-sans text-[14px] font-bold text-primary-text mb-2">Full Name *</label>
         <input
           type="text"
           id="fullName"
           value={formData.fullName}
           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-          className={`w-full px-4 py-3 rounded-md border ${errors.fullName ? 'border-red-500' : 'border-border-warm'} focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors font-sans text-[15px]`}
+          className={`w-full px-4 py-3 rounded-xl border bg-primary-bg ${errors.fullName ? 'border-red-500' : 'border-border-glass'} focus:outline-none focus:border-brand-action focus:ring-1 focus:ring-brand-action transition-colors font-sans text-[15px] text-primary-text placeholder:text-muted-text`}
           placeholder="John Doe"
         />
         {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
@@ -130,25 +118,25 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="businessName" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Business Name *</label>
+          <label htmlFor="businessName" className="block font-sans text-[14px] font-bold text-primary-text mb-2">Business Name *</label>
           <input
             type="text"
             id="businessName"
             value={formData.businessName}
             onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-            className={`w-full px-4 py-3 rounded-md border ${errors.businessName ? 'border-red-500' : 'border-border-warm'} focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors font-sans text-[15px]`}
+            className={`w-full px-4 py-3 rounded-xl border bg-primary-bg ${errors.businessName ? 'border-red-500' : 'border-border-glass'} focus:outline-none focus:border-brand-action focus:ring-1 focus:ring-brand-action transition-colors font-sans text-[15px] text-primary-text placeholder:text-muted-text`}
             placeholder="Acme Corp"
           />
           {errors.businessName && <p className="text-red-500 text-xs mt-1">{errors.businessName}</p>}
         </div>
         <div>
-          <label htmlFor="phone" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Phone Number *</label>
+          <label htmlFor="phone" className="block font-sans text-[14px] font-bold text-primary-text mb-2">Phone Number *</label>
           <input
             type="tel"
             id="phone"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className={`w-full px-4 py-3 rounded-md border ${errors.phone ? 'border-red-500' : 'border-border-warm'} focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors font-sans text-[15px]`}
+            className={`w-full px-4 py-3 rounded-xl border bg-primary-bg ${errors.phone ? 'border-red-500' : 'border-border-glass'} focus:outline-none focus:border-brand-action focus:ring-1 focus:ring-brand-action transition-colors font-sans text-[15px] text-primary-text placeholder:text-muted-text`}
             placeholder="+91 98765 43210"
           />
           {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
@@ -156,25 +144,25 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Work Email *</label>
+        <label htmlFor="email" className="block font-sans text-[14px] font-bold text-primary-text mb-2">Work Email *</label>
         <input
           type="email"
           id="email"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className={`w-full px-4 py-3 rounded-md border ${errors.email ? 'border-red-500' : 'border-border-warm'} focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors font-sans text-[15px]`}
+          className={`w-full px-4 py-3 rounded-xl border bg-primary-bg ${errors.email ? 'border-red-500' : 'border-border-glass'} focus:outline-none focus:border-brand-action focus:ring-1 focus:ring-brand-action transition-colors font-sans text-[15px] text-primary-text placeholder:text-muted-text`}
           placeholder="john@company.com"
         />
         {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
       </div>
 
       <div>
-        <label htmlFor="budget" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Monthly Marketing Budget *</label>
+        <label htmlFor="budget" className="block font-sans text-[14px] font-bold text-primary-text mb-2">Monthly Marketing Budget *</label>
         <select
           id="budget"
           value={formData.budget}
           onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-          className={`w-full px-4 py-3 rounded-md border ${errors.budget ? 'border-red-500' : 'border-border-warm'} focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors bg-white font-sans text-[15px]`}
+          className={`w-full px-4 py-3 rounded-xl border bg-primary-bg ${errors.budget ? 'border-red-500' : 'border-border-glass'} focus:outline-none focus:border-brand-action focus:ring-1 focus:ring-brand-action transition-colors font-sans text-[15px] text-primary-text`}
         >
           <option value="">Select a range...</option>
           <option value="under-50k">Under $5K</option>
@@ -186,7 +174,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block font-sans text-[14px] font-bold text-brand-navy mb-3">Services Interested In</label>
+        <label className="block font-sans text-[14px] font-bold text-primary-text mb-3">Services Interested In</label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {availableServices.map((service, index) => (
             <label key={index} className="flex items-center gap-3 cursor-pointer group">
@@ -195,30 +183,30 @@ export default function ContactForm() {
                   type="checkbox"
                   checked={formData.services.includes(service)}
                   onChange={() => handleServiceToggle(service)}
-                  className="peer appearance-none w-5 h-5 border border-border-warm rounded-sm checked:bg-accent-orange checked:border-accent-orange transition-colors cursor-pointer"
+                  className="peer appearance-none w-5 h-5 border border-border-glass rounded-sm checked:bg-brand-action checked:border-brand-action transition-colors cursor-pointer bg-primary-bg"
                 />
                 <CheckCircle2 size={14} className="absolute text-white opacity-0 peer-checked:opacity-100 pointer-events-none" />
               </div>
-              <span className="font-sans text-[15px] text-secondary-text group-hover:text-brand-navy transition-colors">{service}</span>
+              <span className="font-sans text-[15px] text-secondary-text group-hover:text-primary-text transition-colors">{service}</span>
             </label>
           ))}
         </div>
       </div>
 
       <div>
-        <label htmlFor="message" className="block font-sans text-[14px] font-bold text-brand-navy mb-2">Message (Optional)</label>
+        <label htmlFor="message" className="block font-sans text-[14px] font-bold text-primary-text mb-2">Message (Optional)</label>
         <textarea
           id="message"
           rows={4}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 rounded-md border border-border-warm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange transition-colors resize-none font-sans text-[15px]"
+          className="w-full px-4 py-3 rounded-xl border border-border-glass bg-primary-bg focus:outline-none focus:border-brand-action focus:ring-1 focus:ring-brand-action transition-colors resize-none font-sans text-[15px] text-primary-text placeholder:text-muted-text"
           placeholder="Tell us about your current challenges and goals..."
         ></textarea>
       </div>
 
       {submitError && (
-        <p style={{ color:'#E8440A', marginTop:'12px', fontSize:'14px' }}>
+        <p className="text-red-500 mt-3 text-[14px]">
           {submitError}
         </p>
       )}
@@ -226,8 +214,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        style={{ opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}
-        className="w-full h-[60px] bg-accent-orange text-white font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-md hover:scale-[1.03] hover:shadow-lg hover:shadow-accent-orange/20 transition-all duration-200 ease-out flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:scale-100"
+        className="w-full h-[60px] bg-primary-text text-primary-bg font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-xl hover:scale-[1.02] hover:bg-brand-action hover:text-white transition-all duration-200 ease-out flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:scale-100 disabled:hover:bg-primary-text disabled:hover:text-primary-bg"
       >
         {isSubmitting ? "Sending..." : "Request Free Audit →"}
       </button>

@@ -108,10 +108,14 @@ export default function BlogContent() {
   return (
     <div className="w-full">
       {/* Hero & Search */}
-      <section className="bg-brand-navy pt-32 pb-20 px-6 md:px-12 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="font-display font-extrabold text-[48px] md:text-[64px] leading-[1.1] tracking-[-2px] text-white mb-8">
-            Insights & Intelligence
+      <section className="bg-primary-bg pt-20 pb-24 px-6 md:px-12 text-center relative overflow-hidden border-b border-border-glass">
+        <div className="absolute inset-0 bg-grid-pattern opacity-50 z-0 pointer-events-none"></div>
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <span className="font-mono font-medium text-[13px] text-brand-action uppercase tracking-[2px] mb-6 block">
+            [ Blog & Insights ]
+          </span>
+          <h1 className="font-sans font-black text-[48px] md:text-[64px] leading-[1.05] tracking-tighter text-primary-text mb-8">
+            Insights & <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-text to-secondary-text">Intelligence</span>
           </h1>
           
           <div className="relative max-w-xl mx-auto">
@@ -120,9 +124,9 @@ export default function BlogContent() {
               placeholder="Search articles, topics, or keywords..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-[60px] pl-14 pr-6 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-accent-orange focus:bg-white/15 transition-all font-sans text-[16px]"
+              className="w-full h-[60px] pl-14 pr-6 rounded-full bg-card-bg border border-border-glass text-primary-text placeholder:text-muted-text focus:outline-none focus:border-brand-action focus:ring-1 focus:ring-brand-action transition-all font-sans text-[16px] shadow-sm"
             />
-            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-white/50" size={20} />
+            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-muted-text" size={20} />
           </div>
         </div>
       </section>
@@ -138,8 +142,8 @@ export default function BlogContent() {
               onClick={() => setActiveCategory(category)}
               className={`px-5 py-2 rounded-full font-sans font-bold text-[13px] uppercase tracking-[1px] transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-brand-navy text-white shadow-md'
-                  : 'bg-white text-secondary-text border border-border-warm hover:border-brand-navy hover:text-brand-navy'
+                  ? 'bg-primary-text text-primary-bg shadow-md'
+                  : 'bg-card-bg text-secondary-text border border-border-glass hover:border-primary-text hover:text-primary-text'
               }`}
             >
               {category}
@@ -154,28 +158,28 @@ export default function BlogContent() {
             
             {/* Featured Post (Only show if 'All' is selected and no search query) */}
             {activeCategory === 'All' && searchQuery === '' && (
-              <div className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm group hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300">
-                <div className="relative h-[400px] w-full bg-secondary-bg overflow-hidden">
+              <div className="bg-card-bg rounded-2xl border border-border-glass overflow-hidden shadow-sm group hover:shadow-xl hover:border-brand-action/30 hover:-translate-y-[6px] transition-all duration-300">
+                <div className="relative h-[400px] w-full bg-secondary-bg overflow-hidden border-b border-border-glass">
                   <Image
                     src={`https://picsum.photos/seed/${featuredPost.imageSeed}/1200/800`}
                     alt={featuredPost.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-6 left-6">
-                    <span className="inline-block px-4 py-1.5 bg-white text-brand-navy rounded-full text-xs font-sans font-bold uppercase tracking-[1px] shadow-sm">
+                    <span className="inline-block px-4 py-1.5 bg-primary-bg/80 backdrop-blur-md border border-border-glass text-primary-text rounded-full text-xs font-mono font-bold uppercase tracking-[1px] shadow-sm">
                       {featuredPost.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-8 md:p-10">
-                  <div className="flex flex-wrap items-center gap-6 mb-4 text-sm font-sans text-secondary-text">
+                  <div className="flex flex-wrap items-center gap-6 mb-4 text-sm font-sans text-muted-text">
                     <div className="flex items-center gap-2"><User size={16} /> {featuredPost.author}</div>
                     <div className="flex items-center gap-2"><Calendar size={16} /> {featuredPost.date}</div>
                     <div className="flex items-center gap-2"><Clock size={16} /> {featuredPost.readTime}</div>
                   </div>
-                  <h2 className="font-display font-bold text-[32px] md:text-[40px] leading-[1.1] tracking-[-1px] text-brand-navy mb-4 group-hover:text-accent-orange transition-colors">
+                  <h2 className="font-sans font-bold text-[32px] md:text-[40px] leading-[1.1] tracking-tight text-primary-text mb-4 group-hover:text-brand-action transition-colors">
                     {featuredPost.title}
                   </h2>
                   <p className="font-sans text-[18px] leading-[1.7] text-secondary-text mb-8">
@@ -183,7 +187,7 @@ export default function BlogContent() {
                   </p>
                   <Link 
                     href={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center gap-2 font-sans font-bold text-[15px] text-brand-navy group-hover:text-accent-orange transition-colors uppercase tracking-[1px]"
+                    className="inline-flex items-center gap-2 font-sans font-bold text-[15px] text-primary-text group-hover:text-brand-action transition-colors uppercase tracking-[1px]"
                   >
                     Read Full Article <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -202,31 +206,31 @@ export default function BlogContent() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.4 }}
-                    className="bg-white rounded-2xl border border-border-warm overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
+                    className="bg-card-bg rounded-2xl border border-border-glass overflow-hidden shadow-sm hover:shadow-xl hover:border-brand-action/30 hover:-translate-y-[6px] transition-all duration-300 group flex flex-col h-full"
                   >
                     <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
-                      <div className="relative h-[240px] w-full bg-secondary-bg overflow-hidden">
+                      <div className="relative h-[240px] w-full bg-secondary-bg overflow-hidden border-b border-border-glass">
                         <Image
                           src={`https://picsum.photos/seed/${post.imageSeed}/800/600`}
                           alt={post.title}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal"
                           referrerPolicy="no-referrer"
                         />
                         <div className="absolute top-4 left-4">
-                          <span className="inline-block px-3 py-1 bg-white text-brand-navy rounded-full text-[10px] font-sans font-bold uppercase tracking-[1px] shadow-sm">
+                          <span className="inline-block px-3 py-1 bg-primary-bg/80 backdrop-blur-md border border-border-glass text-primary-text rounded-full text-[10px] font-mono font-bold uppercase tracking-[1px] shadow-sm">
                             {post.category}
                           </span>
                         </div>
                       </div>
                       <div className="p-6 md:p-8 flex-grow flex flex-col">
-                        <h3 className="font-display font-bold text-[22px] leading-[1.3] tracking-[-0.5px] text-brand-navy mb-3 group-hover:text-accent-orange transition-colors line-clamp-2">
+                        <h3 className="font-sans font-bold text-[22px] leading-[1.3] tracking-tight text-primary-text mb-3 group-hover:text-brand-action transition-colors line-clamp-2">
                           {post.title}
                         </h3>
                         <p className="font-sans text-[15px] leading-[1.6] text-secondary-text mb-6 line-clamp-2 flex-grow">
                           {post.excerpt}
                         </p>
-                        <div className="flex items-center justify-between text-[13px] font-sans text-muted-text pt-6 border-t border-border-warm mt-auto">
+                        <div className="flex items-center justify-between text-[13px] font-sans text-muted-text pt-6 border-t border-border-glass mt-auto">
                           <div className="flex items-center gap-1.5"><User size={14} /> {post.author}</div>
                           <div className="flex items-center gap-1.5"><Clock size={14} /> {post.readTime}</div>
                         </div>
@@ -238,7 +242,7 @@ export default function BlogContent() {
             </motion.div>
             
             {filteredPosts.length === 0 && (
-              <div className="text-center py-20 bg-white rounded-2xl border border-border-warm">
+              <div className="text-center py-20 bg-card-bg rounded-2xl border border-border-glass">
                 <p className="font-sans text-[18px] text-secondary-text">No articles found matching your criteria.</p>
               </div>
             )}
@@ -248,21 +252,21 @@ export default function BlogContent() {
           <div className="lg:col-span-4 space-y-8">
             
             {/* Newsletter Signup */}
-            <div className="bg-brand-navy p-8 rounded-2xl text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-accent-orange/20 rounded-full blur-3xl -mr-10 -mt-10"></div>
-              <h3 className="font-display font-bold text-[24px] mb-3 relative z-10">Join 10,000+ Marketers</h3>
-              <p className="font-sans text-[15px] text-gray-300 mb-6 relative z-10">
+            <div className="bg-primary-bg p-8 rounded-2xl border border-border-glass relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-action/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+              <h3 className="font-sans font-bold text-[24px] text-primary-text mb-3 relative z-10 tracking-tight">Join 10,000+ Marketers</h3>
+              <p className="font-sans text-[15px] text-secondary-text mb-6 relative z-10">
                 Get weekly marketing insights — no spam, ever.
               </p>
               <form className="space-y-3 relative z-10">
                 <input 
                   type="email" 
                   placeholder="Your work email" 
-                  className="w-full px-4 py-3 rounded-md bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-accent-orange transition-colors font-sans text-[14px]"
+                  className="w-full px-4 py-3 rounded-xl bg-card-bg border border-border-glass text-primary-text placeholder:text-muted-text focus:outline-none focus:border-brand-action focus:ring-1 focus:ring-brand-action transition-colors font-sans text-[14px]"
                 />
                 <button 
                   type="submit"
-                  className="w-full h-[48px] bg-accent-orange text-white font-sans font-bold text-[14px] uppercase tracking-[1.5px] rounded-md hover:bg-opacity-90 transition-all shadow-md shadow-accent-orange/20"
+                  className="w-full h-[48px] bg-primary-text text-primary-bg font-sans font-bold text-[14px] uppercase tracking-[1.5px] rounded-xl hover:bg-brand-action hover:text-white transition-all shadow-sm"
                 >
                   Subscribe
                 </button>
@@ -270,17 +274,17 @@ export default function BlogContent() {
             </div>
 
             {/* Popular Posts */}
-            <div className="bg-white p-8 rounded-2xl border border-border-warm">
-              <h3 className="font-display font-bold text-[20px] text-brand-navy mb-6 pb-4 border-b border-border-warm">
+            <div className="bg-card-bg p-8 rounded-2xl border border-border-glass">
+              <h3 className="font-sans font-bold text-[20px] text-primary-text mb-6 pb-4 border-b border-border-glass tracking-tight">
                 Popular Posts
               </h3>
               <div className="space-y-6">
                 {popularPosts.map((post, index) => (
                   <Link href={`/blog/${post.slug}`} key={index} className="group block">
-                    <p className="font-sans text-[12px] font-bold text-accent-orange uppercase tracking-[1px] mb-1">
+                    <p className="font-mono text-[12px] font-medium text-brand-action uppercase tracking-[1px] mb-1">
                       {post.date}
                     </p>
-                    <h4 className="font-display font-bold text-[16px] leading-[1.4] text-brand-navy group-hover:text-accent-orange transition-colors">
+                    <h4 className="font-sans font-bold text-[16px] leading-[1.4] text-primary-text group-hover:text-brand-action transition-colors">
                       {post.title}
                     </h4>
                   </Link>
