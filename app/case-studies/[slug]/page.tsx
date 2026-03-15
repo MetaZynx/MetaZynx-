@@ -161,7 +161,6 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-primary-bg flex flex-col pt-20">
-      <Navbar />
 
       {/* Section 1 — Hero */}
       <section className="bg-primary-bg min-h-[50vh] py-24 px-6 md:px-12 flex flex-col justify-center relative border-b border-border-glass overflow-hidden">
