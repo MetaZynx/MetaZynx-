@@ -7,101 +7,61 @@ import CookieConsent from '@/components/CookieConsent';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollProgress from '@/components/ScrollProgress';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
-});
-
-const syne = Syne({
-  subsets: ['latin'],
-  variable: '--font-syne',
-  display: 'swap',
-});
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', display: 'swap' });
+const syne = Syne({ subsets: ['latin'], variable: '--font-syne', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.metazynx.com'),
-  title: 'Metazynx | High-Performance Tech Agency',
-  description: 'Metazynx transforms complex technical challenges into scalable, high-performance software that drives measurable ROI and market leadership.',
-  keywords: 'tech agency, software development, high-performance software, digital assets, Metazynx',
-  authors: [{ name: 'Metazynx' }],
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: 'MetaZynx | 360° Performance Marketing Agency',
+  description: 'MetaZynx is a 360° performance marketing agency delivering SEO, Paid Ads, Creative Design, Web Development, ORM and Influencer Marketing. Results in 90 days. No long-term contracts.',
+  keywords: 'performance marketing agency, SEO agency, Meta Ads, Google Ads, digital marketing, ORM, influencer marketing, MetaZynx, Chandigarh',
+  authors: [{ name: 'MetaZynx' }],
+  robots: { index: true, follow: true },
   openGraph: {
-    title: 'Metazynx | Engineering Digital Dominance',
-    description: 'Precision Engineering for High-ROI Tech.',
+    title: 'MetaZynx | 360° Performance Marketing Agency',
+    description: "We Don't Just Run Campaigns. We Build Revenue. SEO, Paid Ads, Creative, Development, ORM & Influencer.",
     type: 'website',
     url: 'https://www.metazynx.com/',
-    siteName: 'Metazynx',
-    images: [
-      {
-        url: '/assets/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Metazynx - High-Performance Tech Agency',
-      },
-    ],
+    siteName: 'MetaZynx',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'MetaZynx - 360° Performance Marketing Agency' }],
   },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@Metazynx',
-  },
-  alternates: {
-    canonical: '/',
-  },
+  twitter: { card: 'summary_large_image', site: '@MetaZynx' },
+  alternates: { canonical: '/' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Metazynx",
-    "description": "High-Performance Tech Agency",
+    "name": "MetaZynx",
+    "description": "360° Performance Marketing Agency",
     "url": "https://www.metazynx.com",
-    "telephone": "+1-800-555-0199",
-    "email": "hello@metazynx.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "San Francisco"
-    },
-    "sameAs": [
-      "https://linkedin.com/company/metazynx",
-      "https://twitter.com/metazynx"
-    ]
+    "telephone": "+91-6026767767",
+    "email": "info@metazynx.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Chandigarh", "addressCountry": "IN" },
+    "founder": { "@type": "Person", "name": "Divyam Bajaj" },
+    "sameAs": ["https://in.linkedin.com/company/metazynx", "https://www.instagram.com/metazynx/"]
   };
 
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${syne.variable}`} suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className="font-sans bg-zinc-50 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-50 antialiased transition-colors duration-300" suppressHydrationWarning>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <body className="font-sans bg-[#FAFAF8] text-[#0D0D0D] antialiased" suppressHydrationWarning>
+        <>
+          <ScrollProgress />
+          <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" disableTransitionOnChange>
           <Navbar />
-          <PageTransition>
-            {children}
-          </PageTransition>
+          <PageTransition>{children}</PageTransition>
           <Footer />
           <CookieConsent />
           <WhatsAppButton />
         </ThemeProvider>
+        </>
       </body>
     </html>
   );

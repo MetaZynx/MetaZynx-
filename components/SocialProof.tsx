@@ -1,66 +1,100 @@
+'use client';
+
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
 import VanillaCounter from './VanillaCounter';
-import { BarChart3, Rocket, TrendingUp } from 'lucide-react';
+import { BarChart3, Rocket, TrendingUp, Award } from 'lucide-react';
+
+const industries = [
+  'E-Commerce', 'Real Estate', 'Healthcare', 'Education',
+  'FinTech', 'D2C Brands', 'SaaS', 'Hospitality'
+];
 
 export default function SocialProof() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-20%']);
+
+  const stats = [
+    { icon: <BarChart3 className="text-[#E8440A]" size={28} />, prefix: '$', end: 6, suffix: 'M+', label: 'Ad Spend Managed', decimals: 0 },
+    { icon: <Rocket className="text-[#E8440A]" size={28} />, prefix: '', end: 200, suffix: '+', label: 'Campaigns Delivered', decimals: 0 },
+    { icon: <TrendingUp className="text-[#E8440A]" size={28} />, prefix: '', end: 8.4, suffix: 'x', label: 'Average ROAS', decimals: 1 },
+    { icon: <Award className="text-[#E8440A]" size={28} />, prefix: '', end: 97, suffix: '%', label: 'Client Retention', decimals: 0 },
+  ];
+
   return (
-    <section className="bg-secondary-bg border-t border-border-glass py-[80px]">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-center mb-10">
-          <div className="h-[1px] bg-border-glass flex-grow max-w-[100px] md:max-w-[200px]"></div>
-          <span className="font-mono font-medium text-[12px] text-muted-text uppercase tracking-[4px] px-4 text-center">
-            Trusted By Ambitious Brands
+    <section ref={ref} className="bg-[#F2EFE9] border-t border-[#E0DDD6] py-[80px] overflow-hidden relative">
+      {/* Animated background orbs */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#E8440A]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#1B2D5B]/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        {/* Label */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center justify-center mb-10"
+        >
+          <div className="h-[1px] bg-[#E0DDD6] flex-grow max-w-[200px]" />
+          <span className="font-sans font-medium text-[12px] text-[#888888] uppercase tracking-[4px] px-4 text-center">
+            Industries We Serve
           </span>
-          <div className="h-[1px] bg-border-glass flex-grow max-w-[100px] md:max-w-[200px]"></div>
+          <div className="h-[1px] bg-[#E0DDD6] flex-grow max-w-[200px]" />
+        </motion.div>
+
+        {/* Scrolling industry tags */}
+        <div className="overflow-hidden mb-12">
+          <motion.div style={{ x }} className="flex gap-4 whitespace-nowrap">
+            {[...industries, ...industries, ...industries].map((name, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05, borderColor: '#E8440A' }}
+                className="bg-white border border-[#E0DDD6] rounded-full px-6 py-3 shrink-0 cursor-default transition-colors duration-200"
+              >
+                <span className="font-sans font-medium text-[14px] text-[#4A4A4A]">{name}</span>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-        
-        <div className="flex flex-row justify-start md:justify-center items-center gap-[16px] overflow-x-auto pb-4 md:pb-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-          {/* Replace these text placeholders with real client logo images */}
-          {['FinServe Pro', 'GrowthBrand', 'RetailMax', 'EduFirst', 'RealCo', 'HealthPlus'].map((name) => (
-            <div 
-              key={name} 
-              className="bg-card-bg border border-border-glass rounded-[8px] px-[32px] py-[18px] hover:border-muted-text transition-all duration-200 ease-in-out group shrink-0"
+
+        <div className="h-[1px] bg-[#E0DDD6] mb-[40px] w-full" />
+
+        {/* Stats grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(232,68,10,0.08)' }}
+              className="flex flex-col items-center text-center bg-white rounded-2xl p-6 border border-[#E0DDD6] transition-all duration-300 relative overflow-hidden group"
             >
-              <span className="font-sans font-medium text-[15px] text-secondary-text group-hover:text-primary-text transition-colors duration-200 whitespace-nowrap">
-                {name}
-              </span>
-            </div>
+              {/* Orange top bar on hover */}
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#E8440A] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              {stat.icon}
+              <p className="font-sans font-bold text-[48px] md:text-[56px] text-[#0D0D0D] leading-none my-3 tracking-tighter">
+                <VanillaCounter prefix={stat.prefix} end={stat.end} suffix={stat.suffix} decimals={stat.decimals} />
+              </p>
+              <p className="font-sans font-medium text-[12px] text-[#888888] uppercase tracking-[2px]">{stat.label}</p>
+            </motion.div>
           ))}
         </div>
 
-        <div className="h-[1px] bg-border-glass my-[40px] w-full"></div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="flex flex-col items-center text-center md:border-r border-border-glass relative pb-6 md:pb-0">
-            <BarChart3 className="text-brand-action mb-4" size={28} />
-            <p className="font-sans font-bold text-[56px] text-primary-text leading-none mb-2 tracking-tighter">
-              <VanillaCounter prefix="$" end={6} suffix="M+" />
-            </p>
-            <p className="font-mono font-medium text-[13px] text-muted-text uppercase tracking-[2px] mb-4">Ad Spend Managed</p>
-            <div className="w-[40px] h-[3px] bg-brand-action"></div>
-          </div>
-          <div className="flex flex-col items-center text-center md:border-r border-border-glass relative pb-6 md:pb-0">
-            <Rocket className="text-brand-action mb-4" size={28} />
-            <p className="font-sans font-bold text-[56px] text-primary-text leading-none mb-2 tracking-tighter">
-              <VanillaCounter end={200} suffix="+" />
-            </p>
-            <p className="font-mono font-medium text-[13px] text-muted-text uppercase tracking-[2px] mb-4">Campaigns Delivered</p>
-            <div className="w-[40px] h-[3px] bg-brand-action"></div>
-          </div>
-          <div className="flex flex-col items-center text-center relative">
-            <TrendingUp className="text-brand-action mb-4" size={28} />
-            <p className="font-sans font-bold text-[56px] text-primary-text leading-none mb-2 tracking-tighter">
-              <VanillaCounter end={8.4} decimals={1} suffix="x" />
-            </p>
-            <p className="font-mono font-medium text-[13px] text-muted-text uppercase tracking-[2px] mb-4">Average ROAS</p>
-            <div className="w-[40px] h-[3px] bg-brand-action"></div>
-          </div>
-        </div>
-
-        <div className="mt-[40px] text-center">
-          <p className="font-sans font-light text-[14px] text-muted-text italic">
-            Brands across e-commerce, real estate, healthcare, education and finance trust Metazynx to deliver results.
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mt-[40px] text-center"
+        >
+          <p className="font-sans font-light text-[14px] text-[#888888] italic">
+            From e-commerce and real estate to healthcare, education and finance — MetaZynx delivers results across every industry.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
