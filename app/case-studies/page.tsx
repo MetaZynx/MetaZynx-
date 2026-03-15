@@ -49,7 +49,7 @@ export default function CaseStudiesPage() {
           </Link>
         </div>
       </section>
-      <Footer />
+    
     </main>
   );
 }
