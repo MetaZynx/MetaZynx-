@@ -1,6 +1,4 @@
 import { Metadata } from 'next';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import CaseStudiesGrid from '@/components/CaseStudiesGrid';
 import Link from 'next/link';
 
@@ -15,7 +13,7 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen bg-primary-bg flex flex-col pt-20">
-      <Navbar />
+      
       
       {/* Hero Section */}
       <section className="bg-primary-bg py-24 px-6 md:px-12 text-center relative overflow-hidden border-b border-border-glass">
