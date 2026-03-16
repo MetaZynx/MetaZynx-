@@ -44,8 +44,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" aria-label="MetaZynx Home" onClick={() => setIsMobileMenuOpen(false)}>
           <Image
-            src="https://i.ibb.co/5WnwLTjc/Meta-Zynx-Logo.png"
-            alt="MetaZynx Logo"
+src="/metazynx-logo.png"            alt="MetaZynx Logo"
             width={160}
             height={48}
             priority
