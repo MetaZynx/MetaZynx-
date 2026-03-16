@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Linkedin, Instagram, Twitter, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
@@ -7,9 +8,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         {/* Column 1: Brand */}
         <div>
-          <Link href="/" className="flex items-center gap-1 mb-6 group">
-            <span className="font-sans font-black text-2xl tracking-tight text-white">Meta</span>
-            <span className="font-sans font-black text-2xl tracking-tight text-[#E8440A]">Zynx</span>
+          <Link href="/" className="flex items-center mb-6 group">
+            <Image
+              src="/metazynx-logo-dark.png"
+              alt="MetaZynx Logo"
+              width={160}
+              height={48}
+              style={{ objectFit: 'contain', height: '40px', width: 'auto' }}
+            />
           </Link>
           <p className="text-[#888888] font-sans text-[15px] leading-relaxed mb-6">
             360° Performance Marketing. Measurable Results. No Long-Term Contracts.
