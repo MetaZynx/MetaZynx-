@@ -20,6 +20,17 @@ export const metadata: Metadata = {
   keywords: 'performance marketing agency, SEO agency, Meta Ads, Google Ads, digital marketing, ORM, influencer marketing, MetaZynx, Chandigarh',
   authors: [{ name: 'MetaZynx' }],
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     title: 'MetaZynx | 360° Performance Marketing Agency',
     description: "We Don't Just Run Campaigns. We Build Revenue. SEO, Paid Ads, Creative, Development, ORM & Influencer.",
@@ -55,12 +66,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <>
           <ScrollProgress />
           <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" disableTransitionOnChange>
-          <Navbar />
-          <PageTransition>{children}</PageTransition>
-          <Footer />
-          <CookieConsent />
-          <WhatsAppButton />
-        </ThemeProvider>
+            <Navbar />
+            <PageTransition>{children}</PageTransition>
+            <Footer />
+            <CookieConsent />
+            <WhatsAppButton />
+          </ThemeProvider>
         </>
       </body>
     </html>
