@@ -16,7 +16,7 @@ export default function SocialProof() {
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-20%']);
 
   const stats = [
-    { icon: <BarChart3 className="text-[#E8440A]" size={28} />, prefix: '$', end: 6, suffix: 'M+', label: 'Ad Spend Managed', decimals: 0 },
+    { icon: <BarChart3 className="text-[#E8440A]" size={28} />, prefix: '$', end: 10, suffix: 'M+', label: 'Revenue Generated', decimals: 0 },
     { icon: <Rocket className="text-[#E8440A]" size={28} />, prefix: '', end: 200, suffix: '+', label: 'Campaigns Delivered', decimals: 0 },
     { icon: <TrendingUp className="text-[#E8440A]" size={28} />, prefix: '', end: 8.4, suffix: 'x', label: 'Average ROAS', decimals: 1 },
     { icon: <Award className="text-[#E8440A]" size={28} />, prefix: '', end: 97, suffix: '%', label: 'Client Retention', decimals: 0 },
@@ -84,12 +84,25 @@ export default function SocialProof() {
           ))}
         </div>
 
+        {/* NDA Disclaimer */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="mt-[24px] text-center"
+        >
+          <p className="font-sans font-medium text-[11px] text-[#888888] uppercase tracking-[2px]">
+            * Figures represent aggregated results across client engagements. Client identities protected under confidentiality agreements.
+          </p>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-[40px] text-center"
+          className="mt-[16px] text-center"
         >
           <p className="font-sans font-light text-[14px] text-[#888888] italic">
             From e-commerce and real estate to healthcare, education and finance — MetaZynx delivers results across every industry.
