@@ -4,8 +4,169 @@ import { ArrowRight, Calendar, Clock, User } from 'lucide-react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-// Mock data for blog posts
 const blogPosts = {
+  'chandigarh-businesses-invisible-google': {
+    title: 'Why Your Chandigarh Business Is Invisible on Google (And How to Fix It in 30 Days)',
+    category: 'SEO',
+    author: 'Divyam Bajaj',
+    date: 'March 16, 2026',
+    readTime: '6 min read',
+    imageSeed: 'chandigarh-seo',
+    content: `
+      <p>If you run a business in Chandigarh — a restaurant in Sector 17, a clinic in Mohali, a real estate firm in Panchkula — there's a good chance your ideal customer searched for you on Google today.</p>
+      <p>And found your competitor instead.</p>
+      <p>This isn't bad luck. It's a fixable problem. And most Chandigarh businesses are making the same 5 mistakes that keep them invisible online.</p>
+
+      <h2>Mistake 1: Your Google Business Profile is Incomplete or Non-Existent</h2>
+      <p>When someone searches "best dental clinic in Chandigarh" or "interior designer near Sector 35," Google shows a local pack — three businesses with ratings, photos, hours, and a map pin. If you're not in that pack, you don't exist to that customer.</p>
+      <p>Most local businesses either have no Google Business Profile, or one that was set up years ago with the wrong category, no photos, and a description that says nothing.</p>
+      <p><strong>Fix:</strong> Claim your profile at business.google.com. Fill every field. Add 10+ photos. Get your first 5 reviews this week by asking your best customers directly.</p>
+
+      <h2>Mistake 2: Your Website Doesn't Mention Where You Are</h2>
+      <p>Google needs to understand your location to rank you locally. If your homepage says "We provide premium interior design services" without ever mentioning Chandigarh, Mohali, or Panchkula — Google won't show you to local searchers.</p>
+      <p><strong>Fix:</strong> Add your city name naturally throughout your website. Title tags, headings, service pages, and your footer should all include your location.</p>
+
+      <h2>Mistake 3: You Have No Review Strategy</h2>
+      <p>Reviews are a ranking signal and a trust signal. One review from 2021 doesn't cut it. Businesses that consistently collect new reviews rank higher and convert better.</p>
+      <p><strong>Fix:</strong> Create a simple system. After every successful job, send customers a direct link to your Google review page. Even 2 new reviews per month compounds significantly over a year.</p>
+
+      <h2>Mistake 4: Your Website is Slow on Mobile</h2>
+      <p>Over 70% of local searches in India happen on mobile. If your website takes more than 3 seconds to load on a phone, most visitors leave before they see anything. Google knows this, and penalises slow sites in rankings.</p>
+      <p><strong>Fix:</strong> Test your site at pagespeed.web.dev. If your mobile score is below 70, it's hurting your rankings every single day.</p>
+
+      <h2>Mistake 5: You Have No Consistent Content</h2>
+      <p>Businesses that publish helpful, relevant content consistently rank for more keywords over time. A restaurant that publishes "Best places for corporate lunch in Chandigarh" will eventually rank for that search. Your competitor who only has a contact page won't.</p>
+      <p><strong>Fix:</strong> Start with one blog post per month. Target what your customers actually search for, not industry jargon.</p>
+
+      <h2>The 30-Day Action Plan</h2>
+      <p>Here's exactly what to do this month if you want to start ranking locally:</p>
+      <ul>
+        <li><strong>Week 1:</strong> Claim and complete your Google Business Profile. Add photos, update description, set correct category.</li>
+        <li><strong>Week 2:</strong> Audit your website. Add your city name to title tags, H1s, and service pages.</li>
+        <li><strong>Week 3:</strong> Ask your top 10 customers for a Google review. Create a simple template message to send them.</li>
+        <li><strong>Week 4:</strong> Write one blog post targeting a local search term your customers actually use.</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>Chandigarh's market is competitive but nowhere near saturated online. Most local businesses are still making basic mistakes. That means the businesses that fix these five issues in the next 30 days will have a significant advantage for months.</p>
+      <p>At MetaZynx, we specialise in helping Chandigarh businesses go from invisible to ranking — and from ranking to converting. If you want a free audit of your current online presence, <a href="/contact">reach out here</a> or email us at info@metazynx.com.</p>
+    `
+  },
+
+  'meta-ads-india-2026': {
+    title: 'Why Your Meta Ads Stopped Working in 2026 (And What Actually Does)',
+    category: 'Paid Media',
+    author: 'Divyam Bajaj',
+    date: 'March 16, 2026',
+    readTime: '7 min read',
+    imageSeed: 'meta-ads-2026',
+    content: `
+      <p>Something changed in Meta Ads in 2026. You've probably felt it.</p>
+      <p>The same campaigns that drove strong ROAS in 2023 and 2024 are underperforming. Your cost per acquisition is climbing. Your retargeting isn't hitting the way it used to. You're spending more and getting less.</p>
+      <p>You're not imagining it. And it's not your fault. The platform fundamentally changed.</p>
+
+      <h2>What Changed: The Shift to AI-First Delivery</h2>
+      <p>In late 2025, Meta completed its global rollout of AI-first ad delivery — including across India. This was the most significant change to Meta's ad delivery system in years.</p>
+      <p>Before this shift, you controlled your audience. You defined who saw your ads through detailed targeting — interests, behaviours, lookalikes, custom audiences.</p>
+      <p>After the shift, Meta's AI controls audience delivery. The algorithm now decides in real time which ad to show to which user, based on <strong>creative signals</strong> rather than your targeting parameters.</p>
+      <p>This is why your carefully built audience segments are underperforming. The system has changed. Your strategy needs to change with it.</p>
+
+      <h2>What's Failing in 2026</h2>
+      <p><strong>Over-segmented campaigns.</strong> Multiple ad sets targeting narrow custom audiences worked before. Now they fragment your data, slow down the learning phase, and confuse the algorithm. Consolidate.</p>
+      <p><strong>Stale creatives.</strong> Under the new system, creative is your primary targeting signal. If you're running the same ads you've had for 6 months, your performance will decline regardless of budget.</p>
+      <p><strong>Broad interest targeting.</strong> Stacking interests tells the algorithm nothing useful. It actually restricts the AI from finding your best customers.</p>
+      <p><strong>Low creative volume.</strong> The brands winning right now are testing 15–20 creative variations per month. Not boosting one post and hoping.</p>
+
+      <h2>What's Actually Working in 2026</h2>
+      <p><strong>Advantage+ Shopping Campaigns (ASC) for e-commerce.</strong> This is Meta's AI-powered campaign type that handles audience and placement automatically. For most Indian D2C brands with a product catalogue, this is now the highest-performing campaign structure.</p>
+      <p><strong>UGC-style creatives.</strong> Polished studio ads are getting ignored. Raw, authentic, creator-style content — someone talking directly to camera about the product — is outperforming everything. This is not a trend. It's the new baseline.</p>
+      <p><strong>Hook-first video.</strong> You have 1.5 seconds to stop the scroll. The first frame of your video needs to be the most compelling thing in the entire ad. Not your logo. Not a product shot. A pattern interrupt.</p>
+      <p><strong>Broad targeting + strong creative.</strong> Let the algorithm find your audience. Give it compelling creative signals and enough budget to learn (minimum ₹500/day per campaign). Stop restricting it with narrow parameters.</p>
+
+      <h2>The Right Campaign Structure for Indian Brands in 2026</h2>
+      <p>Here's the simplified structure that's working:</p>
+      <ul>
+        <li><strong>Top of Funnel:</strong> One Advantage+ Shopping Campaign or Broad Audience campaign. Budget: 70% of your total spend. Creative: 8–10 variations (mix of UGC, static, short video).</li>
+        <li><strong>Bottom of Funnel:</strong> One retargeting campaign targeting website visitors and existing customers. Budget: 30% of total spend. Creative: testimonials, offers, urgency-based messaging.</li>
+      </ul>
+      <p>Two campaigns. High creative volume. Let Meta's AI do the audience work.</p>
+
+      <h2>The Metrics That Actually Matter</h2>
+      <p>Stop obsessing over CPM and CTR. The only metrics that matter for Indian D2C brands on Meta in 2026:</p>
+      <ul>
+        <li><strong>Cost Per Purchase (CPP)</strong> — What does it actually cost to get a sale?</li>
+        <li><strong>ROAS (Return on Ad Spend)</strong> — For every ₹1 spent, how much revenue came back?</li>
+        <li><strong>Blended CAC (Customer Acquisition Cost)</strong> — Across all channels, what does a new customer cost?</li>
+      </ul>
+      <p>If your ROAS is below 2x, your campaigns need a creative overhaul before a budget increase. More spend on a broken strategy accelerates the loss.</p>
+
+      <h2>The Bottom Line</h2>
+      <p>Meta Ads in India still work. In fact, for D2C brands with the right strategy, they're still the most scalable paid acquisition channel available. But the old playbook is dead.</p>
+      <p>At MetaZynx, Meta Ads management is one of our core services. We've managed campaigns that have generated $10M+ in revenue across clients. If your current Meta Ads aren't delivering, <a href="/contact">book a free audit</a> — we'll tell you exactly what's broken and how to fix it.</p>
+    `
+  },
+
+  'seo-for-indian-d2c-brands': {
+    title: 'SEO for Indian D2C Brands: How to Get Organic Sales Without Burning Ad Budget',
+    category: 'SEO',
+    author: 'Divyam Bajaj',
+    date: 'March 16, 2026',
+    readTime: '8 min read',
+    imageSeed: 'seo-d2c',
+    content: `
+      <p>Most Indian D2C brands have the same problem: they're completely dependent on Meta Ads and Google Ads for every sale.</p>
+      <p>The moment the ad spend stops, the revenue stops. This isn't a business. It's a treadmill.</p>
+      <p>The brands that build real, lasting revenue streams invest in SEO alongside paid ads. And the Indian D2C brands that have cracked SEO are seeing something powerful: organic traffic that converts — without a cost per click.</p>
+
+      <h2>Why Most D2C Brands Ignore SEO (And Pay the Price)</h2>
+      <p>SEO feels slow. Paid ads feel fast. So most D2C founders default to ads, see results, and never build the organic foundation.</p>
+      <p>The problem: paid CAC (Customer Acquisition Cost) in India has increased significantly over the past 3 years. What used to cost ₹300 to acquire a customer on Meta now costs ₹600–₹1,200 for many categories.</p>
+      <p>Brands with strong SEO have a structural advantage. Their organic CAC is near zero. Every paid rupee goes further because SEO is already doing the trust-building and intent-capturing work.</p>
+
+      <h2>The 3 Types of SEO That Matter for D2C Brands</h2>
+
+      <h2>1. Product SEO</h2>
+      <p>This is the most direct revenue driver. It means ranking your product pages for high-intent search terms — the queries people type when they're ready to buy.</p>
+      <p>Examples: "buy protein powder online India", "handmade leather wallet men India", "organic face serum for oily skin".</p>
+      <p>Most D2C brands have product pages with one line of description and nothing else. That's not enough to rank. Every product page needs a proper title tag, meta description, 300+ words of keyword-rich copy, structured data markup, and customer reviews rendered on-page.</p>
+
+      <h2>2. Category SEO</h2>
+      <p>Category pages are often the highest-traffic, highest-converting pages on a D2C site — and the most neglected. A category page for "Men's Skincare" shouldn't just be a grid of products. It should answer the searcher's intent: what to look for, how to choose, what's trending.</p>
+
+      <h2>3. Content SEO (Blog)</h2>
+      <p>This is the long game — and it compounds. A blog post targeting "how to choose a yoga mat India" can rank for years and send qualified traffic to your yoga mat product page consistently. The key is intent matching. Map your content to the right stage of the funnel.</p>
+
+      <h2>The Technical Foundations You Can't Skip</h2>
+      <ul>
+        <li><strong>Site speed.</strong> India has a huge proportion of mobile users on slower connections. Target a Core Web Vitals score of 75+ on mobile.</li>
+        <li><strong>Crawlability.</strong> Submit your sitemap to Google Search Console. Check the Coverage report weekly for any indexing errors.</li>
+        <li><strong>Structured data.</strong> Product schema markup enables rich snippets in search results that dramatically increase click-through rates.</li>
+        <li><strong>Internal linking.</strong> Link from your blog content to relevant product and category pages. This passes authority and helps Google understand your site structure.</li>
+      </ul>
+
+      <h2>The Indian D2C SEO Keyword Strategy</h2>
+      <ul>
+        <li><strong>Tier 1 — High intent, high volume:</strong> "buy [product] online India." Competitive but the most valuable. Target these on product and category pages.</li>
+        <li><strong>Tier 2 — Comparison keywords:</strong> "[your brand] vs [competitor]," "best [product category] India 2026." Capture customers in decision mode.</li>
+        <li><strong>Tier 3 — Problem-aware keywords:</strong> "how to [solve problem your product solves]." Capture customers earlier in the funnel.</li>
+        <li><strong>Tier 4 — Long-tail local:</strong> "[product] + [city]" for brands with any local presence or delivery specificity.</li>
+      </ul>
+
+      <h2>What a 6-Month SEO Timeline Looks Like</h2>
+      <ul>
+        <li><strong>Month 1–2:</strong> Technical fixes, site speed optimisation, Google Search Console setup, first round of on-page optimisation for top 10 product pages.</li>
+        <li><strong>Month 3–4:</strong> Category page content, first 4–6 blog posts targeting Tier 3 keywords, initial backlink outreach. First rankings begin to appear.</li>
+        <li><strong>Month 5–6:</strong> Compounding begins. Blog content starts ranking. Organic traffic grows 40–80% from baseline.</li>
+        <li><strong>Month 7+:</strong> Organic becomes a meaningful revenue channel. Blended CAC starts to fall.</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>Indian D2C brands that are still 100% dependent on paid ads in 2026 are one algorithm update away from a revenue crisis. The brands that build organic foundations now will have a structural cost advantage for years.</p>
+      <p>You don't need to choose between paid and organic. The best brands do both — and let them compound together.</p>
+      <p>At MetaZynx, SEO is one of our core services. We build organic growth engines for D2C brands across India. If you want to see what an SEO roadmap would look like for your brand, <a href="/contact">book a free audit</a>.</p>
+    `
+  },
+
   'omnichannel-performance-marketing-2026': {
     title: 'The 2026 Guide to Omnichannel Performance Marketing',
     category: 'Strategy',
@@ -205,7 +366,7 @@ const blogPosts = {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const post = blogPosts[resolvedParams.slug as keyof typeof blogPosts];
-  
+
   if (!post) {
     return {
       title: 'Post Not Found | MetaZynx',
@@ -268,7 +429,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       {/* Article Body */}
       <section className="py-16 md:py-24 px-6 flex-grow">
         <div className="max-w-3xl mx-auto">
-          <div 
+          <div
             className="prose prose-lg prose-zinc dark:prose-invert max-w-none
               prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-primary-text
               prose-p:font-sans prose-p:text-secondary-text prose-p:leading-relaxed
@@ -278,18 +439,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               prose-ul:text-secondary-text prose-li:marker:text-brand-action"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
-          
+
           <div className="mt-16 pt-8 border-t border-border-glass flex items-center justify-between">
-            <Link 
+            <Link
               href="/blog"
               className="inline-flex items-center gap-2 font-mono text-[13px] font-medium text-secondary-text hover:text-brand-action transition-colors uppercase tracking-[1px]"
             >
               &larr; Back to Blog
             </Link>
-            
-            <div className="flex gap-4">
-              {/* Share buttons could go here */}
-            </div>
           </div>
         </div>
       </section>
@@ -304,7 +461,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <p className="font-sans text-[18px] text-secondary-text mb-10 max-w-xl">
             Stop guessing and start growing. Get a data-driven audit of your current marketing strategy.
           </p>
-          <Link 
+          <Link
             href="/contact"
             className="inline-flex items-center justify-center bg-primary-text text-primary-bg font-sans font-bold text-[15px] uppercase tracking-[1.5px] px-8 py-4 rounded-xl hover:bg-brand-action hover:text-white transition-all shadow-sm"
           >
