@@ -10,7 +10,7 @@ export default function Footer() {
         <div>
           <Link href="/" className="flex items-center mb-6 group">
             <Image
-              src="/metazynx-logo-dark.png"
+              src="/metazynx-logo-dark.svg"
               alt="MetaZynx Logo"
               width={160}
               height={48}
