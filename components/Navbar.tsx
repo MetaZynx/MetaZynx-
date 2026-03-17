@@ -49,7 +49,7 @@ export default function Navbar() {
             width={160}
             height={48}
             priority
-            style={{ objectFit: 'contain', height: '40px', width: 'auto' }}
+            style={{ objectFit: 'contain', height: '56px', width: 'auto' }}
           />
         </Link>
 
