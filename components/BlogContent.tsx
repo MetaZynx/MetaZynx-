@@ -22,9 +22,64 @@ const featuredPost = {
 const posts = [
   {
     id: 1,
+    category: 'Strategy',
+    title: 'How to Choose a Digital Marketing Agency in India (Without Getting Burned)',
+    excerpt: 'Every week, Indian businesses waste lakhs on agencies that overpromise and underdeliver. Here are the 5 red flags to watch for and the 5 questions to ask before signing anything.',
+    author: 'Divyam Bajaj',
+    date: 'March 17, 2026',
+    readTime: '7 min read',
+    imageSeed: 'choose-agency',
+    slug: 'how-to-choose-digital-marketing-agency-india'
+  },
+  {
+    id: 2,
+    category: 'Paid Media',
+    title: 'Google Ads vs Meta Ads in India: Which One Should You Run in 2026?',
+    excerpt: 'Stop asking which platform is better. Start asking which platform fits which stage of your customer journey. The complete breakdown for Indian businesses.',
+    author: 'Divyam Bajaj',
+    date: 'March 17, 2026',
+    readTime: '8 min read',
+    imageSeed: 'google-vs-meta',
+    slug: 'google-ads-vs-meta-ads-india'
+  },
+  {
+    id: 3,
+    category: 'Strategy',
+    title: 'Digital Marketing for Real Estate in India: How to Generate Quality Leads in 2026',
+    excerpt: "Today's homebuyer spends 3–6 months researching online before visiting a property. If you're not showing up where they're searching, you've already lost them.",
+    author: 'Divyam Bajaj',
+    date: 'March 17, 2026',
+    readTime: '8 min read',
+    imageSeed: 'real-estate-marketing',
+    slug: 'digital-marketing-for-real-estate-india'
+  },
+  {
+    id: 4,
+    category: 'Strategy',
+    title: 'What is Performance Marketing? The Complete Guide for Indian Businesses in 2026',
+    excerpt: 'Most Indian businesses have spent money on marketing that could not be measured. Performance marketing is the opposite of all that. Every rupee is tracked.',
+    author: 'Divyam Bajaj',
+    date: 'March 17, 2026',
+    readTime: '7 min read',
+    imageSeed: 'performance-marketing',
+    slug: 'what-is-performance-marketing-india'
+  },
+  {
+    id: 5,
+    category: 'Social Media',
+    title: 'Social Media Marketing for Small Businesses in India: What Actually Works in 2026',
+    excerpt: 'Most small business owners in India conclude that social media does not work for their business. Social media works. The strategy most businesses are using does not.',
+    author: 'Divyam Bajaj',
+    date: 'March 17, 2026',
+    readTime: '7 min read',
+    imageSeed: 'social-media-india',
+    slug: 'social-media-marketing-small-business-india-2026'
+  },
+  {
+    id: 6,
     category: 'SEO',
     title: 'Why Your Chandigarh Business Is Invisible on Google (And How to Fix It in 30 Days)',
-    excerpt: 'Most Chandigarh businesses are losing customers to competitors on Google every day. Here\'s exactly why — and the 5-step fix a performance marketing agency uses to change that.',
+    excerpt: 'Most Chandigarh businesses are losing customers to competitors on Google every day. Here are the 5 mistakes keeping you invisible — and the exact fixes.',
     author: 'Divyam Bajaj',
     date: 'March 16, 2026',
     readTime: '6 min read',
@@ -32,10 +87,10 @@ const posts = [
     slug: 'chandigarh-businesses-invisible-google'
   },
   {
-    id: 2,
+    id: 7,
     category: 'Paid Media',
     title: 'Why Your Meta Ads Stopped Working in 2026 (And What Actually Does)',
-    excerpt: 'Indian D2C brands are burning ₹50,000+ on Meta Ads with declining results. Here\'s what changed in 2026, why your old strategy is failing, and what top-performing brands are doing instead.',
+    excerpt: "Indian D2C brands are burning ₹50,000+ on Meta Ads with declining results. Here's what changed, why your old strategy is failing, and what top brands are doing instead.",
     author: 'Divyam Bajaj',
     date: 'March 16, 2026',
     readTime: '7 min read',
@@ -43,10 +98,10 @@ const posts = [
     slug: 'meta-ads-india-2026'
   },
   {
-    id: 3,
+    id: 8,
     category: 'SEO',
     title: 'SEO for Indian D2C Brands: How to Get Organic Sales Without Burning Ad Budget',
-    excerpt: 'Most Indian D2C brands are 100% dependent on paid ads for revenue. Here\'s how to build an SEO engine that drives organic sales — and makes every rupee of ad spend go further.',
+    excerpt: 'Most Indian D2C brands are 100% dependent on paid ads for revenue. Here is how to build an SEO engine that drives organic sales.',
     author: 'Divyam Bajaj',
     date: 'March 16, 2026',
     readTime: '8 min read',
@@ -54,7 +109,7 @@ const posts = [
     slug: 'seo-for-indian-d2c-brands'
   },
   {
-    id: 4,
+    id: 9,
     category: 'SEO',
     title: 'The Future of Search: AI Overviews and Your Organic Strategy',
     excerpt: 'How to adapt your content strategy for the new era of AI-driven search results and maintain visibility.',
@@ -65,7 +120,7 @@ const posts = [
     slug: 'future-of-search-ai-overviews'
   },
   {
-    id: 5,
+    id: 10,
     category: 'Paid Media',
     title: 'Why Your Meta Ads Are Failing (And How to Fix Them)',
     excerpt: 'A deep dive into common account structure mistakes and creative fatigue that kill ROAS.',
@@ -76,7 +131,7 @@ const posts = [
     slug: 'why-meta-ads-fail'
   },
   {
-    id: 6,
+    id: 11,
     category: 'Social Media',
     title: 'UGC is Dead. Long Live Authentic Creator Partnerships.',
     excerpt: 'Why consumers see through fake UGC and how to build genuine creator relationships that convert.',
@@ -87,7 +142,7 @@ const posts = [
     slug: 'authentic-creator-partnerships'
   },
   {
-    id: 7,
+    id: 12,
     category: 'Content',
     title: 'Core Web Vitals: The Silent Killer of E-Commerce Conversion Rates',
     excerpt: 'Why your slow website is costing you thousands in lost sales and how to optimize for speed.',
@@ -98,7 +153,7 @@ const posts = [
     slug: 'core-web-vitals-ecommerce'
   },
   {
-    id: 8,
+    id: 13,
     category: 'ORM',
     title: 'Protecting Your Brand in the Age of Viral Outrage',
     excerpt: 'A proactive approach to online reputation management and crisis communication.',
@@ -109,7 +164,7 @@ const posts = [
     slug: 'protecting-brand-viral-outrage'
   },
   {
-    id: 9,
+    id: 14,
     category: 'Strategy',
     title: 'Design That Converts: The Psychology of Ad Creatives',
     excerpt: 'How color, typography, and layout influence purchasing decisions in digital advertising.',
@@ -122,9 +177,9 @@ const posts = [
 ];
 
 const popularPosts = [
-  { title: 'Why Your Chandigarh Business Is Invisible on Google', date: 'Mar 16, 2026', slug: 'chandigarh-businesses-invisible-google' },
-  { title: 'Why Your Meta Ads Stopped Working in 2026', date: 'Mar 16, 2026', slug: 'meta-ads-india-2026' },
-  { title: 'SEO for Indian D2C Brands', date: 'Mar 16, 2026', slug: 'seo-for-indian-d2c-brands' },
+  { title: 'How to Choose a Digital Marketing Agency in India', date: 'Mar 17, 2026', slug: 'how-to-choose-digital-marketing-agency-india' },
+  { title: 'Google Ads vs Meta Ads India 2026', date: 'Mar 17, 2026', slug: 'google-ads-vs-meta-ads-india' },
+  { title: 'Digital Marketing for Real Estate India', date: 'Mar 17, 2026', slug: 'digital-marketing-for-real-estate-india' },
 ];
 
 export default function BlogContent() {
@@ -140,7 +195,6 @@ export default function BlogContent() {
 
   return (
     <div className="w-full">
-      {/* Hero & Search */}
       <section className="bg-primary-bg pt-20 pb-24 px-6 md:px-12 text-center relative overflow-hidden border-b border-border-glass">
         <div className="absolute inset-0 bg-grid-pattern opacity-50 z-0 pointer-events-none"></div>
         <div className="relative z-10 max-w-3xl mx-auto">
@@ -150,7 +204,6 @@ export default function BlogContent() {
           <h1 className="font-sans font-black text-[48px] md:text-[64px] leading-[1.05] tracking-tighter text-primary-text mb-8">
             Insights & <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-text to-secondary-text">Intelligence</span>
           </h1>
-
           <div className="relative max-w-xl mx-auto">
             <input
               type="text"
@@ -164,10 +217,7 @@ export default function BlogContent() {
         </div>
       </section>
 
-      {/* Main Content Area */}
       <section className="py-16 max-w-7xl mx-auto px-6 md:px-12">
-
-        {/* Category Filter */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
           {categories.map((category) => (
             <button
@@ -185,11 +235,7 @@ export default function BlogContent() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-
-          {/* Left Column: Featured + Grid */}
           <div className="lg:col-span-8 space-y-12">
-
-            {/* Featured Post */}
             {activeCategory === 'All' && searchQuery === '' && (
               <div className="bg-card-bg rounded-2xl border border-border-glass overflow-hidden shadow-sm group hover:shadow-xl hover:border-brand-action/30 hover:-translate-y-[6px] transition-all duration-300">
                 <div className="relative h-[400px] w-full bg-secondary-bg overflow-hidden border-b border-border-glass">
@@ -228,7 +274,6 @@ export default function BlogContent() {
               </div>
             )}
 
-            {/* Blog Grid */}
             <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <AnimatePresence mode="popLayout">
                 {filteredPosts.map((post) => (
@@ -281,10 +326,7 @@ export default function BlogContent() {
             )}
           </div>
 
-          {/* Right Column: Sidebar */}
           <div className="lg:col-span-4 space-y-8">
-
-            {/* Newsletter Signup */}
             <div className="bg-primary-bg p-8 rounded-2xl border border-border-glass relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-action/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
               <h3 className="font-sans font-bold text-[24px] text-primary-text mb-3 relative z-10 tracking-tight">Join 10,000+ Marketers</h3>
@@ -306,7 +348,6 @@ export default function BlogContent() {
               </form>
             </div>
 
-            {/* Popular Posts */}
             <div className="bg-card-bg p-8 rounded-2xl border border-border-glass">
               <h3 className="font-sans font-bold text-[20px] text-primary-text mb-6 pb-4 border-b border-border-glass tracking-tight">
                 Popular Posts
@@ -324,7 +365,6 @@ export default function BlogContent() {
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </section>
