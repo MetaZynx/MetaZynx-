@@ -3,10 +3,18 @@ import Link from 'next/link';
 import { Search, Megaphone, PenTool, Code, Users, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Our Services | 360° Digital Marketing — MetaZynx',
-  description: "Explore MetaZynx's full suite of digital marketing services: SEO, Meta Ads, Google Ads, Graphic Design, Web Development, Influencer Marketing, UGC, and ORM. All under one roof.",
+  title: '360° Digital Marketing Services in Chandigarh & India | MetaZynx',
+  description: "MetaZynx offers full-suite digital marketing services in Chandigarh and across India — SEO, Meta Ads, Google Ads, Web Design, Influencer Marketing & ORM. Free audit. No contracts.",
+  keywords: 'digital marketing services Chandigarh, digital marketing agency India, SEO Meta Ads Google Ads India, web design Chandigarh, influencer marketing India, ORM services India',
   alternates: {
     canonical: 'https://www.metazynx.com/services',
+  },
+  openGraph: {
+    title: '360° Digital Marketing Services in Chandigarh & India | MetaZynx',
+    description: 'Full-suite performance marketing services for brands across India. SEO, Meta Ads, Google Ads, Web Design, Influencer Marketing & ORM — all under one roof.',
+    url: 'https://www.metazynx.com/services',
+    type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Digital Marketing Services — MetaZynx' }],
   },
 };
 
@@ -104,7 +112,7 @@ export default function ServicesPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-text to-secondary-text">Performance</span>
           </h1>
           <p className="font-sans text-[19px] md:text-[22px] text-secondary-text max-w-2xl mx-auto leading-[1.6]">
-            A complete ecosystem of digital marketing solutions designed to scale your brand and maximize ROI.
+            A complete ecosystem of digital marketing solutions for brands in Chandigarh and across India — designed to scale your business and maximize ROI.
           </p>
         </div>
       </section>
@@ -117,13 +125,8 @@ export default function ServicesPage() {
               <div className="mb-6 bg-secondary-bg w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-brand-action/10 border border-border-glass transition-colors duration-300">
                 {service.icon}
               </div>
-              <h2 className="font-sans font-bold text-[28px] text-primary-text mb-2 tracking-tight">
-                {service.title}
-              </h2>
-              <p className="font-sans text-[16px] text-brand-action font-medium mb-6">
-                {service.valueStatement}
-              </p>
-              
+              <h2 className="font-sans font-bold text-[28px] text-primary-text mb-2 tracking-tight">{service.title}</h2>
+              <p className="font-sans text-[16px] text-brand-action font-medium mb-6">{service.valueStatement}</p>
               <ul className="space-y-3 mb-8 flex-grow">
                 {service.bullets.map((bullet, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -132,8 +135,7 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              
-              <Link 
+              <Link
                 href={service.link}
                 className="w-full h-[48px] border border-border-glass text-primary-text font-sans font-bold text-[14px] uppercase tracking-[1.5px] rounded-xl flex items-center justify-center gap-2 hover:bg-primary-text hover:text-primary-bg hover:scale-[1.02] duration-200 ease-out transition-all mt-auto"
               >
@@ -148,14 +150,12 @@ export default function ServicesPage() {
       <section className="py-20 bg-secondary-bg border-y border-border-glass relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-30 z-0 pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
-          <span className="font-mono font-medium text-[13px] text-brand-action uppercase tracking-[2px] mb-4 block">
-            [ Expertise ]
-          </span>
-          <h3 className="font-sans font-bold text-[32px] text-primary-text mb-10 tracking-tight">Industries We Serve</h3>
+          <span className="font-mono font-medium text-[13px] text-brand-action uppercase tracking-[2px] mb-4 block">[ Expertise ]</span>
+          <h3 className="font-sans font-bold text-[32px] text-primary-text mb-10 tracking-tight">Industries We Serve Across India</h3>
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
             {industries.map((industry, index) => (
-              <span 
-                key={index} 
+              <span
+                key={index}
                 className="px-6 py-3 bg-card-bg border border-border-glass rounded-full font-sans font-bold text-[15px] text-primary-text shadow-sm hover:border-brand-action hover:text-brand-action hover:-translate-y-[2px] transition-all cursor-default"
               >
                 {industry}
@@ -171,7 +171,7 @@ export default function ServicesPage() {
           <h2 className="font-sans font-bold text-[36px] md:text-[48px] text-primary-text mb-8 tracking-tighter leading-[1.1]">
             Not sure which services you need?
           </h2>
-          <Link 
+          <Link
             href="/contact"
             className="inline-flex items-center justify-center h-[60px] px-10 bg-primary-text text-primary-bg font-sans font-bold text-[16px] uppercase tracking-[2px] rounded-xl hover:scale-[1.02] hover:bg-brand-action hover:text-white transition-all duration-200 ease-out"
           >
