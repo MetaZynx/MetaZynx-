@@ -5,10 +5,18 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Paid Performance Advertising | MetaZynx',
-  description: 'Precision-targeted paid campaigns engineered for maximum return on ad spend and scalable customer acquisition.',
+  title: 'Meta & Google Ads Agency in Chandigarh & India | MetaZynx',
+  description: 'MetaZynx manages Meta Ads and Google Ads for brands across India. Certified specialists. Average 8.4x ROAS. No wasted spend. Free paid ads audit for Chandigarh & Indian businesses.',
+  keywords: 'Meta Ads agency Chandigarh, Google Ads agency India, Facebook Ads Chandigarh, PPC agency India, paid advertising Chandigarh, Google Ads management India, Meta Ads India',
   alternates: {
     canonical: 'https://www.metazynx.com/services/ads',
+  },
+  openGraph: {
+    title: 'Meta & Google Ads Agency in Chandigarh & India | MetaZynx',
+    description: 'Certified Meta and Google Ads specialists. We manage paid campaigns that generate real revenue — not just clicks. Based in Chandigarh, serving brands across India.',
+    url: 'https://www.metazynx.com/services/ads',
+    type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Meta & Google Ads Agency — MetaZynx' }],
   },
 };
 
@@ -48,7 +56,7 @@ export default function AdsPage() {
             Meta & Google Ads Built for ROAS
           </h1>
           <p className="text-white/75 font-sans font-light text-[18px] md:text-[20px] max-w-[600px] leading-[1.6] mb-10">
-            Precision-targeted paid campaigns engineered for maximum return on ad spend and scalable customer acquisition.
+            Precision-targeted paid campaigns engineered for maximum return on ad spend and scalable customer acquisition. Serving brands in Chandigarh and across India.
           </p>
           <Link 
             href="/contact"
@@ -88,15 +96,9 @@ export default function AdsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyCards.map((card, i) => (
               <div key={i} className="bg-white border border-[#1B2D5B] rounded-[12px] p-8 flex flex-col">
-                <span className="text-[#E8440A] font-display font-bold text-[32px] mb-6">
-                  0{i + 1}
-                </span>
-                <h3 className="text-[#1B2D5B] font-sans font-bold text-[22px] mb-4">
-                  {card.title}
-                </h3>
-                <p className="text-[#1B2D5B]/80 font-sans text-[16px] leading-[1.6]">
-                  {card.description}
-                </p>
+                <span className="text-[#E8440A] font-display font-bold text-[32px] mb-6">0{i + 1}</span>
+                <h3 className="text-[#1B2D5B] font-sans font-bold text-[22px] mb-4">{card.title}</h3>
+                <p className="text-[#1B2D5B]/80 font-sans text-[16px] leading-[1.6]">{card.description}</p>
               </div>
             ))}
           </div>
@@ -109,12 +111,8 @@ export default function AdsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col items-center">
-                <span className="text-[#E8440A] font-display font-extrabold text-[48px] md:text-[56px] leading-none mb-4">
-                  {stat.value}
-                </span>
-                <span className="text-white font-sans font-light text-[14px] uppercase tracking-[2px]">
-                  {stat.label}
-                </span>
+                <span className="text-[#E8440A] font-display font-extrabold text-[48px] md:text-[56px] leading-none mb-4">{stat.value}</span>
+                <span className="text-white font-sans font-light text-[14px] uppercase tracking-[2px]">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -124,9 +122,7 @@ export default function AdsPage() {
       {/* Section 5 — Bottom CTA */}
       <section className="w-full bg-[#FAFAF8] py-24 px-6 md:px-12 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-[#1B2D5B] font-display font-extrabold text-[40px] md:text-[56px] mb-6">
-            Ready to Grow?
-          </h2>
+          <h2 className="text-[#1B2D5B] font-display font-extrabold text-[40px] md:text-[56px] mb-6">Ready to Grow?</h2>
           <p className="text-[#1B2D5B]/70 font-sans font-light text-[18px] md:text-[20px] mb-10">
             Let&apos;s engineer a growth strategy tailored to your brand&apos;s unique goals.
           </p>
