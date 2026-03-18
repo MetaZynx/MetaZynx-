@@ -1,0 +1,26 @@
+# MetaZynx — robots.txt
+# https://www.metazynx.com
+
+User-agent: *
+Allow: /
+
+# Block admin and API routes from indexing
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow all major search engine bots explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.metazynx.com/sitemap.xml
