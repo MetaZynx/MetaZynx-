@@ -2,8 +2,10 @@
 
 import { motion, useScroll, useTransform } from 'motion/react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CalendarDays } from 'lucide-react';
 import { useRef } from 'react';
+
+const CALENDLY_URL = 'https://calendly.com/metazynx-info';
 
 export default function FinalCTA() {
   const ref = useRef(null);
@@ -99,6 +101,7 @@ export default function FinalCTA() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
+          {/* Primary — Free Audit */}
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
             <Link
               href="/contact"
@@ -109,14 +112,16 @@ export default function FinalCTA() {
             </Link>
           </motion.div>
 
+          {/* Secondary — Book a Call via Calendly */}
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
             <a
-              href="https://wa.me/916026767767"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-[60px] px-10 bg-white text-[#0D0D0D] font-sans font-bold text-[15px] rounded-md flex items-center gap-3 border border-[#E0DDD6] hover:border-[#E8440A] transition-all duration-300 group"
+              className="h-[60px] px-10 bg-white text-[#1B2D5B] font-sans font-bold text-[15px] rounded-md flex items-center gap-3 border-2 border-[#1B2D5B] hover:bg-[#1B2D5B] hover:text-white transition-all duration-300 group"
             >
-              WhatsApp Us →
+              <CalendarDays size={18} />
+              Book a 30-min Call
             </a>
           </motion.div>
         </motion.div>
