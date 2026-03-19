@@ -4,8 +4,10 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, CalendarDays } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+
+const CALENDLY_URL = 'https://calendly.com/metazynx-info';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,8 +81,22 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center">
+        {/* Desktop CTAs */}
+        <div className="hidden md:flex items-center gap-3">
+          {/* Book a Call — Calendly */}
+          <motion.a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="flex items-center gap-2 font-sans font-bold text-[13px] uppercase tracking-widest px-5 py-3 rounded-md border-2 border-[#1B2D5B] text-[#1B2D5B] hover:bg-[#1B2D5B] hover:text-white transition-all duration-300"
+          >
+            <CalendarDays size={14} />
+            Book a Call
+          </motion.a>
+
+          {/* Get Free Audit */}
           <Link
             href="/contact"
             className="bg-[#E8440A] text-white font-sans font-bold text-[13px] uppercase tracking-widest px-6 py-3 rounded-md hover:bg-[#1B2D5B] transition-all duration-300 ease-out inline-block"
@@ -123,9 +139,23 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+
+              {/* Mobile: Book a Call */}
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 border-2 border-[#1B2D5B] text-[#1B2D5B] font-sans font-bold text-center text-[15px] uppercase tracking-widest px-6 py-4 rounded-md mt-2 hover:bg-[#1B2D5B] hover:text-white transition-all duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <CalendarDays size={16} />
+                Book a Call
+              </a>
+
+              {/* Mobile: Get Free Audit */}
               <Link
                 href="/contact"
-                className="bg-[#E8440A] text-white font-sans font-bold text-center text-[15px] uppercase tracking-widest px-6 py-4 rounded-md mt-4 hover:bg-[#1B2D5B] transition-all duration-300 ease-out"
+                className="bg-[#E8440A] text-white font-sans font-bold text-center text-[15px] uppercase tracking-widest px-6 py-4 rounded-md hover:bg-[#1B2D5B] transition-all duration-300 ease-out"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Get Free Audit
