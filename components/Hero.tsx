@@ -2,11 +2,13 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CalendarDays } from 'lucide-react';
 import HeroCyclingWord from './HeroCyclingWord';
 import dynamic from 'next/dynamic';
 
 const HeroSlider = dynamic(() => import('@/components/HeroSlider'), { ssr: false });
+
+const CALENDLY_URL = 'https://calendly.com/metazynx-info';
 
 export default function Hero() {
   return (
@@ -48,18 +50,26 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 mt-12 w-full sm:w-auto"
           >
+            {/* Primary CTA */}
             <Link 
               href="/contact"
               className="group font-sans font-medium text-[15px] tracking-[0.5px] rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:-translate-y-[2px] bg-[#0D0D0D] hover:bg-[#333333] text-white px-[36px] py-[16px] shadow-sm"
             >
               Start Your Growth Journey <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link 
-              href="/case-studies"
-              className="font-sans font-medium text-[15px] tracking-[0.5px] rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-[2px] bg-white hover:bg-gray-50 text-[#0D0D0D] border border-gray-200 px-[36px] py-[16px] shadow-sm"
+
+            {/* Secondary CTA — Book a Call */}
+            <motion.a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="group font-sans font-medium text-[15px] tracking-[0.5px] rounded-full flex items-center justify-center gap-2 transition-all duration-300 bg-white hover:bg-[#F2EFE9] text-[#1B2D5B] border-2 border-[#1B2D5B] px-[36px] py-[16px] shadow-sm"
             >
-              View Our Work
-            </Link>
+              <CalendarDays size={18} />
+              Book a 30-min Call
+            </motion.a>
           </motion.div>
 
           {/* Element 5 — Trust Line */}
