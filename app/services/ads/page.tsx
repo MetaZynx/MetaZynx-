@@ -41,11 +41,11 @@ export default function AdsPage() {
   ];
 
   const faqs = [
-    { q: 'How much does Meta and Google Ads management cost in India?', a: 'Our paid ads management starts at a percentage of your monthly ad spend, with no lock-in contracts. We work with budgets from ₹30,000/month upwards. Book a free audit and we'll recommend the right structure for your budget.' },
-    { q: 'What is a good ROAS for Meta Ads in India?', a: 'A good ROAS for Meta Ads in India typically ranges from 3x to 5x for e-commerce brands. Our campaigns average 8.4x ROAS. Factors like product margins, audience size, and creative quality all affect ROAS significantly.' },
-    { q: 'How long before I see results from paid ads?', a: 'With Google Ads, you can see traffic within 24-48 hours of launch. Meta Ads typically require 2-4 weeks to exit the learning phase and optimise. Significant ROI improvements are usually visible within 30-60 days.' },
-    { q: 'Do you manage both Meta Ads and Google Ads together?', a: 'Yes — we specialise in integrated paid media strategies that use both platforms in tandem. Google captures existing demand while Meta builds awareness and retargets. Combined, they consistently outperform single-platform strategies.' },
-    { q: 'What makes MetaZynx different from other paid ads agencies in India?', a: 'We combine creative production and media buying under one team — no handoffs between departments. Every campaign is built around your ROAS targets, not just clicks or impressions. We report on revenue impact weekly, not just vanity metrics.' },
+    { q: `How much does Meta and Google Ads management cost in India?`, a: `Our paid ads management starts at a percentage of your monthly ad spend, with no lock-in contracts. We work with budgets from ₹30,000/month upwards. Book a free audit and we'll recommend the right structure for your budget.` },
+    { q: `What is a good ROAS for Meta Ads in India?`, a: `A good ROAS for Meta Ads in India typically ranges from 3x to 5x for e-commerce brands. Our campaigns average 8.4x ROAS. Factors like product margins, audience size, and creative quality all affect ROAS significantly.` },
+    { q: `How long before I see results from paid ads?`, a: `With Google Ads, you can see traffic within 24-48 hours of launch. Meta Ads typically require 2-4 weeks to exit the learning phase and optimise. Significant ROI improvements are usually visible within 30-60 days.` },
+    { q: `Do you manage both Meta Ads and Google Ads together?`, a: `Yes — we specialise in integrated paid media strategies that use both platforms in tandem. Google captures existing demand while Meta builds awareness and retargets. Combined, they consistently outperform single-platform strategies.` },
+    { q: `What makes MetaZynx different from other paid ads agencies in India?`, a: `We combine creative production and media buying under one team — no handoffs between departments. Every campaign is built around your ROAS targets, not just clicks or impressions. We report on revenue impact weekly, not just vanity metrics.` },
   ];
 
   const faqSchema = {
