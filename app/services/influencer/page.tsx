@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   title: 'Influencer & UGC Marketing Agency in India | MetaZynx',
   description: 'MetaZynx connects Indian brands with the right influencers and UGC creators. Authentic content that converts. Performance-based influencer marketing across India. Based in Chandigarh.',
   keywords: 'influencer marketing agency India, UGC marketing India, influencer agency Chandigarh, creator marketing India, UGC content India, influencer marketing Chandigarh',
-  alternates: {
-    canonical: 'https://www.metazynx.com/services/influencer',
-  },
+  alternates: { canonical: 'https://www.metazynx.com/services/influencer' },
   openGraph: {
     title: 'Influencer & UGC Marketing Agency in India | MetaZynx',
     description: 'Performance-based influencer and UGC marketing for Indian brands. Real creators, authentic content, measurable results. Based in Chandigarh.',
@@ -20,42 +18,46 @@ export const metadata: Metadata = {
   },
 };
 
-export default function InfluencerPage() {
-  const deliverables = [
-    { title: 'Influencer Identification & Vetting', description: 'Finding authentic creators whose audience perfectly aligns with your brand.' },
-    { title: 'Campaign Strategy & Creative Briefing', description: 'Developing clear, compelling briefs that guide creators while maintaining their voice.' },
-    { title: 'UGC Content Production', description: 'Sourcing high-quality user-generated content that feels native and trustworthy.' },
-    { title: 'Performance Tracking & Reporting', description: 'Measuring the exact impact of every creator partnership on your bottom line.' },
-    { title: 'Creator Relationship Management', description: 'Handling all communication, negotiation, and long-term relationship building.' },
-    { title: 'Content Repurposing for Paid Ads', description: 'Transforming top-performing organic creator content into scalable paid ad creatives.' }
-  ];
+export default function Page() {
+  const deliverables = [{ title: "Influencer Identification & Vetting", description: "Finding authentic creators whose audience perfectly aligns with your brand." },
+    { title: "Campaign Strategy & Creative Briefing", description: "Developing clear, compelling briefs that guide creators while maintaining their voice." },
+    { title: "UGC Content Production", description: "Sourcing high-quality user-generated content that feels native and trustworthy." },
+    { title: "Performance Tracking & Reporting", description: "Measuring the exact impact of every creator partnership on your bottom line." },
+    { title: "Creator Relationship Management", description: "Handling all communication, negotiation, and long-term relationship building." },
+    { title: "Content Repurposing for Paid Ads", description: "Transforming top-performing organic creator content into scalable paid ad creatives." }];
+  const whyCards = [{ title: "Quality Over Quantity", description: "We find creators whose audience genuinely matches your ideal customer profile" },
+    { title: "UGC for Ads", description: "Creator content repurposed as paid ad creatives consistently outperforms studio content" },
+    { title: "End-to-End Management", description: "From outreach to reporting, we handle everything" }];
+  const stats = [{ value: "3M+", label: "Organic Views Generated" },
+    { value: "+310%", label: "Average Engagement Lift" },
+    { value: "50+", label: "Creator Partnerships" }];
+  const faqs = [{ q: "How much does influencer marketing cost in India?", a: "Influencer campaign costs vary based on creator tier. Nano influencers (10K-50K followers) typically charge ₹3,000-₹15,000 per post. Micro influencers (50K-500K) charge ₹15,000-₹1,00,000. We manage the full campaign including outreach and reporting." },
+    { q: "What is UGC and why is it better than traditional influencer content?", a: "UGC (User Generated Content) is authentic content created by real customers or creators that feels native to social platforms. It consistently outperforms polished brand content in ads because audiences trust peer recommendations. We source UGC and repurpose it as paid ad creatives for maximum impact." },
+    { q: "How do you measure influencer campaign ROI?", a: "We track reach, engagement rate, story views, link clicks, promo code redemptions, and attributed sales where possible. Every creator is given a unique tracking link or promo code so we can measure direct revenue impact, not just vanity metrics." },
+    { q: "What types of influencers do you work with in India?", a: "We work with influencers across all tiers — from nano creators with highly engaged niche audiences to macro influencers with millions of followers. We focus on audience relevance over follower count, ensuring your product reaches the right people." },
+    { q: "Can UGC content be used in Meta Ads?", a: "Yes — and this is one of the most powerful combinations in digital marketing. UGC content repurposed as Meta Ads consistently outperforms studio-produced creatives because it feels authentic. We specifically brief creators to produce content that works both organically and as paid ads." }];
 
-  const whyCards = [
-    { title: 'Quality Over Quantity', description: 'We find creators whose audience genuinely matches your ideal customer profile' },
-    { title: 'UGC for Ads', description: 'Creator content repurposed as paid ad creatives consistently outperforms studio content' },
-    { title: 'End-to-End Management', description: 'From outreach to reporting, we handle everything' }
-  ];
-
-  const stats = [
-    { value: '3M+', label: 'Organic Views Generated' },
-    { value: '+310%', label: 'Average Engagement Lift' },
-    { value: '50+', label: 'Creator Partnerships' }
-  ];
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  };
 
   return (
     <main className="min-h-screen flex flex-col font-sans">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
 
       <section className="w-full bg-[#1B2D5B] min-h-[60vh] flex flex-col justify-center pt-32 pb-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto w-full">
           <span className="block text-[#E8440A] uppercase tracking-[3px] font-sans font-bold text-sm mb-6">INFLUENCER & UGC MARKETING</span>
           <h1 className="text-white font-display font-extrabold text-[40px] md:text-[56px] leading-[1.1] mb-6">Creator Partnerships That Actually Convert</h1>
-          <p className="text-white/75 font-sans font-light text-[18px] md:text-[20px] max-w-[600px] leading-[1.6] mb-10">
-            Authentic influencer campaigns and user-generated content that builds trust, social proof and measurable revenue at scale. Serving brands across India.
-          </p>
-          <Link href="/contact" className="inline-flex items-center justify-center bg-[#E8440A] text-white font-sans font-bold text-[16px] px-8 py-4 rounded-md hover:scale-[1.03] transition-transform duration-200">
-            Get Your Free Audit →
-          </Link>
+          <p className="text-white/75 font-sans font-light text-[18px] md:text-[20px] max-w-[600px] leading-[1.6] mb-10">Authentic influencer campaigns and user-generated content that builds trust, social proof and measurable revenue at scale. Serving brands across India.</p>
+          <Link href="/contact" className="inline-flex items-center justify-center bg-[#E8440A] text-white font-sans font-bold text-[16px] px-8 py-4 rounded-md hover:scale-[1.03] transition-transform duration-200">Get Your Free Audit →</Link>
         </div>
       </section>
 
@@ -104,13 +106,25 @@ export default function InfluencerPage() {
         </div>
       </section>
 
+      <section className="w-full bg-[#F2EFE9] py-24 px-6 md:px-12">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-[#1B2D5B] font-display font-bold text-[36px] md:text-[44px] mb-12">Frequently Asked Questions</h2>
+          <div className="flex flex-col gap-6">
+            {faqs.map((faq, i) => (
+              <div key={i} className="bg-white rounded-[10px] p-8 border border-[#E0DDD6]">
+                <h3 className="text-[#1B2D5B] font-sans font-bold text-[18px] mb-3">{faq.q}</h3>
+                <p className="text-[#4A4A4A] font-sans text-[16px] leading-[1.7]">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="w-full bg-[#FAFAF8] py-24 px-6 md:px-12 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-[#1B2D5B] font-display font-extrabold text-[40px] md:text-[56px] mb-6">Ready to Grow?</h2>
-          <p className="text-[#1B2D5B]/70 font-sans font-light text-[18px] md:text-[20px] mb-10">Let&apos;s engineer a growth strategy tailored to your brand&apos;s unique goals.</p>
-          <Link href="/contact" className="inline-flex items-center justify-center bg-[#E8440A] text-white font-sans font-bold text-[16px] px-8 py-4 rounded-md hover:scale-[1.03] transition-transform duration-200">
-            Book Your Free Audit Today →
-          </Link>
+          <p className="text-[#1B2D5B]/70 font-sans font-light text-[18px] md:text-[20px] mb-10">Let's engineer a growth strategy tailored to your brand's unique goals.</p>
+          <Link href="/contact" className="inline-flex items-center justify-center bg-[#E8440A] text-white font-sans font-bold text-[16px] px-8 py-4 rounded-md hover:scale-[1.03] transition-transform duration-200">Book Your Free Audit Today →</Link>
         </div>
       </section>
 
