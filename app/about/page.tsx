@@ -44,19 +44,6 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: 'Divyam Bajaj',
-      role: 'FOUNDER & CEO',
-      bio: 'Founder of MetaZynx. $100K+ in affiliate revenue. Former account manager for multi-billion dollar brands. Meta & Google Ads specialist. Divyam engineers growth systems that deliver results — not vanity metrics.',
-      linkedin: 'https://www.linkedin.com/in/divyambajaj333',
-      avatar: {
-        bg: '#09090B',
-        content: 'DB',
-        fontSize: '32px',
-        fontFamily: 'var(--font-sans)',
-        fontWeight: '800'
-      }
-    },
-    {
       name: 'Specialist Partner Network',
       role: 'DELIVERY PARTNERS',
       bio: 'MetaZynx operates with a curated network of vetted specialists — designers, developers, SEO experts and media buyers — ensuring every client gets senior-level execution across every channel.',
@@ -219,7 +206,7 @@ export default function AboutPage() {
             Meet The Team
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {team.map((member, index) => (
             <div key={index} className="bg-card-bg rounded-2xl border border-border-glass overflow-hidden group hover:border-brand-action/30 transition-all duration-300 flex flex-col">
               <div className="h-64 bg-secondary-bg relative flex items-center justify-center border-b border-border-glass">
